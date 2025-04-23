@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import UploadFile, File
-from audio_to_rag_json import generate_rag_json
+from audio_pipeline import process_audio_session
 from pydantic import BaseModel
 from typing import List, Optional
 from rag_agent import TherapyRAGAgent
@@ -76,13 +76,14 @@ async def upload_audio(file: UploadFile = File(...)):
             shutil.copyfileobj(file.file, tmp)
             tmp_path = tmp.name
 
-        # 2) run Whisper + emotion classification
-        rag_chunk = generate_rag_json(tmp_path, f"{tmp_path}.json")
+        # 2) process into RAG json with detailed segments
+        rag_json = process_audio_session(tmp_path)
 
-        # 3) add to vector store
-        agent.add_chunk(rag_chunk)
+        # 3) add each segment to the vector store
+        for seg in rag_json["segments"]:
+            agent.add_chunk(seg)
 
-        return {"status": "ingested", "chunk_id": rag_chunk["id"]}
+        return {"status": "ingested", "session_id": rag_json["session_id"]}
     except Exception as e:
         logger.exception("Audio ingestion failed")
         raise HTTPException(status_code=500, detail=str(e))
