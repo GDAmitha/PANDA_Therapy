@@ -1,8 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi import UploadFile, File
+from audio_to_rag_json import generate_rag_json
 from pydantic import BaseModel
 from typing import List, Optional
 from rag_agent import TherapyRAGAgent
+import shutil, tempfile
 import logging
 import traceback
 
@@ -63,6 +66,26 @@ async def load_documents(directory: str = "therapy_documents"):
         error_detail = f"Error loading documents: {str(e)}\n{traceback.format_exc()}"
         logger.error(error_detail)
         raise HTTPException(status_code=500, detail=error_detail)
+
+@app.post("/upload-audio")
+async def upload_audio(file: UploadFile = File(...)):
+    try:
+        # 1) save to a temporary file
+        suffix = ".wav" if file.filename.endswith(".wav") else ".mp3"
+        with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
+            shutil.copyfileobj(file.file, tmp)
+            tmp_path = tmp.name
+
+        # 2) run Whisper + emotion classification
+        rag_chunk = generate_rag_json(tmp_path, f"{tmp_path}.json")
+
+        # 3) add to vector store
+        agent.add_chunk(rag_chunk)
+
+        return {"status": "ingested", "chunk_id": rag_chunk["id"]}
+    except Exception as e:
+        logger.exception("Audio ingestion failed")
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     import uvicorn

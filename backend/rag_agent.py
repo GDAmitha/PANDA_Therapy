@@ -4,6 +4,7 @@ from langchain_community.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains import ConversationalRetrievalChain
 from langchain_community.document_loaders import TextLoader, DirectoryLoader
+from langchain_community.docstore.document import Document
 import os
 import logging
 from dotenv import load_dotenv
@@ -104,6 +105,31 @@ class TherapyRAGAgent:
         except Exception as e:
             logger.error(f"Error in chat: {str(e)}")
             raise
+
+    def add_chunk(self, chunk: dict):
+        """
+        Append a single transcript/emotion chunk to the vector store.
+        Expects output of generate_rag_json().
+        """
+        # Build a LangChain Document
+        doc = Document(
+            page_content=chunk["summary"],
+            metadata={
+                "id":        chunk["id"],
+                "emotion":   chunk["emotion"],
+                "source":    chunk["source"],
+                "speaker":   chunk["speaker"],
+                "timestamp": chunk["timestamp"],
+            },
+        )
+        if self.vector_store is None:
+            # first time – create a new DB
+            self.vector_store = Chroma.from_documents(
+                [doc], self.embeddings, persist_directory="./chroma_db"
+            )
+        else:
+            self.vector_store.add_documents([doc])
+        self.vector_store.persist()  # flush to disk
 
 # Usage example
 if __name__ == "__main__":
