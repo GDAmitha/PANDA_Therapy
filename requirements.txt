@@ -12,7 +12,10 @@ pydantic>=2.6.1
 whisper
 torch
 torchaudio
-transfromers
-pybud
+transformers
 fastapi
 python-multipart
+python-dotenv
+pydub>=0.2.2
+Pillow>=9.0.0
+pyannote.audio
