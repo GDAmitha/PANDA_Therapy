@@ -67,26 +67,27 @@ async def load_documents(directory: str = "therapy_documents"):
         logger.error(error_detail)
         raise HTTPException(status_code=500, detail=error_detail)
 
-@app.post("/upload-audio")
-async def upload_audio(file: UploadFile = File(...)):
-    try:
-        # 1) save to a temporary file
-        suffix = ".wav" if file.filename.endswith(".wav") else ".mp3"
-        with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
-            shutil.copyfileobj(file.file, tmp)
-            tmp_path = tmp.name
-
-        # 2) process into RAG json with detailed segments
-        rag_json = process_audio_session(tmp_path)
-
-        # 3) add each segment to the vector store
-        for seg in rag_json["segments"]:
-            agent.add_chunk(seg)
-
-        return {"status": "ingested", "session_id": rag_json["session_id"]}
-    except Exception as e:
-        logger.exception("Audio ingestion failed")
-        raise HTTPException(status_code=500, detail=str(e))
+# Temporarily commenting out audio processing endpoint
+# @app.post("/upload-audio")
+# async def upload_audio(file: UploadFile = File(...)):
+#     try:
+#         # 1) save to a temporary file
+#         suffix = ".wav" if file.filename.endswith(".wav") else ".mp3"
+#         with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
+#             shutil.copyfileobj(file.file, tmp)
+#             tmp_path = tmp.name
+#
+#         # 2) process into RAG json with detailed segments
+#         rag_json = process_audio_session(tmp_path)
+#
+#         # 3) add each segment to the vector store
+#         for seg in rag_json["segments"]:
+#             agent.add_chunk(seg)
+#
+#         return {"status": "ingested", "session_id": rag_json["session_id"]}
+#     except Exception as e:
+#         logger.exception("Audio ingestion failed")
+#         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     import uvicorn
