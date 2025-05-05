@@ -10,9 +10,17 @@ fastapi>=0.109.2
 uvicorn>=0.27.1
 pydantic>=2.6.1
 whisper
-torch
-torchaudio
-transfromers
+torch>=2.1.0
+torchaudio>=2.1.0
+transformers>=4.37.0
 pybud
-fastapi
-python-multipart
+python-multipart>=0.0.6
+llama-index-core>=0.10.0
+llama-index-embeddings-openai>=0.1.0
+llama-index-llms-openai>=0.1.0
+# pydub>=0.25.1
+# pyannote.audio>=3.1.1
+openai-whisper>=20231117
+sentencepiece>=0.2.0
+protobuf>=4.25.3
+soundfile>=0.12.1
