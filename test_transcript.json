@@ -1,0 +1,116 @@
+[
+  {
+    "start": 0.0,
+    "end": 5.16,
+    "speaker": "SPEAKER_00",
+    "text": "Hi, Dental. Welcome in today. What brings you in?"
+  },
+  {
+    "start": 5.16,
+    "end": 17.18,
+    "speaker": "SPEAKER_01",
+    "text": "What brings me in is over the weekend I jumped into a lake. I don't know how to swim and I don't know why I was delusional enough to jump into a lake. I don't know what's wrong with me. Or is anything even wrong with me?"
+  },
+  {
+    "start": 16.0,
+    "end": 24.3,
+    "speaker": "SPEAKER_00",
+    "text": "Well, seems like a fun thing to do on a weekend. What prompted you to jump into the lake?"
+  },
+  {
+    "start": 24.3,
+    "end": 26.7,
+    "speaker": "SPEAKER_01",
+    "text": "I don't know. I think I was like, I done with life."
+  },
+  {
+    "start": 26.7,
+    "end": 31.1,
+    "speaker": "SPEAKER_00",
+    "text": "Oh was it more of self harm?"
+  },
+  {
+    "start": 31.1,
+    "end": 31.1,
+    "speaker": "unknown",
+    "text": "I"
+  },
+  {
+    "start": 32.24,
+    "end": 34.34,
+    "speaker": "SPEAKER_01",
+    "text": "Don't really know. I think it was a mixture of like adrenaline"
+  },
+  {
+    "start": 38.18,
+    "end": 39.48,
+    "speaker": "SPEAKER_01",
+    "text": "I'm"
+  },
+  {
+    "start": 39.48,
+    "end": 43.38,
+    "speaker": "SPEAKER_00",
+    "text": "glad you're able to laugh about it was this more of a spur of a moment"
+  },
+  {
+    "start": 44.66,
+    "end": 46.82,
+    "speaker": "SPEAKER_00",
+    "text": "Kind of like I'm done with life"
+  },
+  {
+    "start": 47.8,
+    "end": 49.38,
+    "speaker": "SPEAKER_00",
+    "text": "How do you get out?"
+  },
+  {
+    "start": 49.38,
+    "end": 52.12,
+    "speaker": "SPEAKER_01",
+    "text": "How did I get out? There was a lifeguard who saved"
+  },
+  {
+    "start": 52.12,
+    "end": 53.42,
+    "speaker": "SPEAKER_00",
+    "text": "me."
+  },
+  {
+    "start": 53.42,
+    "end": 53.42,
+    "speaker": "unknown",
+    "text": "So"
+  },
+  {
+    "start": 53.42,
+    "end": 57.08,
+    "speaker": "SPEAKER_00",
+    "text": "you were going to drown and then I guess"
+  },
+  {
+    "start": 57.08,
+    "end": 73.96,
+    "speaker": "SPEAKER_01",
+    "text": "I wasn't necessarily going to drown. I thought that I was like, oh, I'm done. I just like want some water, like, you know, try something new. I guess I didn't quite realize that I didn't know how to swim until I was in that situation. And then I realized that, oh, I really, I could have really died from that situation. I guess"
+  },
+  {
+    "start": 73.92,
+    "end": 79.52,
+    "speaker": "SPEAKER_00",
+    "text": "the important thing now is, are you gonna do that again? Or do you think this is a pattern?"
+  },
+  {
+    "start": 79.52,
+    "end": 87.22,
+    "speaker": "SPEAKER_01",
+    "text": "I don't know, I feel like it is a pattern that I tend to do things and not really realize the consequences of them until they happen."
+  },
+  {
+    "start": 87.22,
+    "end": 103.6,
+    "speaker": "SPEAKER_00",
+    "text": "Is this more of an impulsivity or more of a just deep desire to die? Well, that's all I have time for today. Hopefully this LLM agent will help you not do that again."
+  }
+]

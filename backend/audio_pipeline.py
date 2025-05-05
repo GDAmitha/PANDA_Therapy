@@ -1,7 +1,9 @@
+## DEPRECIATED ###
 import os
 import uuid
 import time
 import tempfile
+import whisper
 from collections import Counter
 
 from dotenv import load_dotenv
