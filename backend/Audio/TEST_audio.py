@@ -1,7 +1,7 @@
 import os
 import json
 from dotenv import load_dotenv
-from Audio import transcribe_and_segment
+from Audio2 import transcribe_and_segment
 
 load_dotenv()
 HF_TOKEN = os.getenv("HF_TOKEN")

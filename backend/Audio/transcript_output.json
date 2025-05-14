@@ -1,0 +1,4921 @@
+{
+  "id": "cf888ccb-c152-4924-b4b2-96b8aacf62c5",
+  "language_model": "assemblyai_default",
+  "acoustic_model": "assemblyai_default",
+  "language_code": "en_us",
+  "status": "completed",
+  "audio_url": "https://cdn.assemblyai.com/upload/95ad2007-7b85-4ca3-b88e-e4521d0e49f1",
+  "text": "Hi Dimple, welcome in today. What brings you in? What brings me in is over the weekend I jumped into a lake. I don't know how to swim and I don't know why I was delusional enough to jump into a lake. I don't know what's wrong with me or is anything even wrong with me? Well, seems like a fun thing to do on a weekend. What prompted you to jump into the lake? I don't know. I think I was like, I felt done with life. Oh, was it more of self-harm? I don't really know. I think it was a mixture of like adrenaline pumping. Well, I'm glad you're able to laugh about it. Was this more of a spur of a moment? Kind of like, I'm done with life. How did you get out? How did I get out? There was a lifeguard who saved me. So you were, Going to drown and. Then I guess I wasn't necessarily going to drown I thought that I was like oh, I'm done. I just like want some water like you know try something new I guess I didn't quite realize that I didn't know how to swim until I was in that situation and then I realized that oh, I really I could have really died from that situation I guess. The important thing now is are you gonna do that again? Or do you think this is a pattern? I don't know. I feel like it is a pattern that I tend to do things and not really really and realize the consequences of them until they happen. Is this more of an impulsivity or more of a deep desire to die? Well, that's all I have time for today. Hopefully this LLM agent will help you not do that again. Goodbye.",
+  "words": [
+    {
+      "text": "Hi",
+      "end": 80,
+      "confidence": 0.7631384,
+      "speaker": "B",
+      "start": 0
+    },
+    {
+      "text": "Dimple,",
+      "start": 1440,
+      "end": 1840,
+      "confidence": 0.19858018,
+      "speaker": "B"
+    },
+    {
+      "text": "welcome",
+      "start": 2000,
+      "end": 2400,
+      "confidence": 0.9690034,
+      "speaker": "B"
+    },
+    {
+      "text": "in",
+      "start": 2400,
+      "end": 2480,
+      "confidence": 0.99630225,
+      "speaker": "B"
+    },
+    {
+      "text": "today.",
+      "start": 2640,
+      "end": 2720,
+      "confidence": 0.77247864,
+      "speaker": "B"
+    },
+    {
+      "text": "What",
+      "start": 3920,
+      "end": 4000,
+      "confidence": 0.98426,
+      "speaker": "B"
+    },
+    {
+      "text": "brings",
+      "start": 4240,
+      "end": 4560,
+      "confidence": 0.9914282,
+      "speaker": "B"
+    },
+    {
+      "text": "you",
+      "start": 4640,
+      "end": 4720,
+      "confidence": 0.9975545,
+      "speaker": "B"
+    },
+    {
+      "text": "in?",
+      "start": 4800,
+      "end": 4880,
+      "confidence": 0.9818996,
+      "speaker": "B"
+    },
+    {
+      "text": "What",
+      "start": 5200,
+      "end": 5280,
+      "confidence": 0.931714,
+      "speaker": "A"
+    },
+    {
+      "text": "brings",
+      "start": 5520,
+      "end": 5840,
+      "confidence": 0.9944517,
+      "speaker": "A"
+    },
+    {
+      "text": "me",
+      "start": 5840,
+      "end": 5920,
+      "confidence": 0.9952992,
+      "speaker": "A"
+    },
+    {
+      "text": "in",
+      "start": 6000,
+      "end": 6080,
+      "confidence": 0.9947606,
+      "speaker": "A"
+    },
+    {
+      "text": "is",
+      "start": 6240,
+      "end": 6320,
+      "confidence": 0.9415238,
+      "speaker": "A"
+    },
+    {
+      "text": "over",
+      "start": 6560,
+      "end": 6640,
+      "confidence": 0.8114002,
+      "speaker": "A"
+    },
+    {
+      "text": "the",
+      "start": 6800,
+      "end": 6880,
+      "confidence": 0.99531543,
+      "speaker": "A"
+    },
+    {
+      "text": "weekend",
+      "start": 6880,
+      "end": 7120,
+      "confidence": 0.9911942,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 7280,
+      "end": 7360,
+      "confidence": 0.85907876,
+      "speaker": "A"
+    },
+    {
+      "text": "jumped",
+      "start": 7440,
+      "end": 7680,
+      "confidence": 0.9903778,
+      "speaker": "A"
+    },
+    {
+      "text": "into",
+      "start": 7680,
+      "end": 7760,
+      "confidence": 0.98241055,
+      "speaker": "A"
+    },
+    {
+      "text": "a",
+      "start": 7920,
+      "end": 8000,
+      "confidence": 0.9934196,
+      "speaker": "A"
+    },
+    {
+      "text": "lake.",
+      "start": 8080,
+      "end": 8240,
+      "confidence": 0.7112158,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 8880,
+      "end": 8960,
+      "confidence": 0.9113561,
+      "speaker": "A"
+    },
+    {
+      "text": "don't",
+      "start": 8960,
+      "end": 9200,
+      "confidence": 0.98751956,
+      "speaker": "A"
+    },
+    {
+      "text": "know",
+      "start": 9200,
+      "end": 9360,
+      "confidence": 0.99472517,
+      "speaker": "A"
+    },
+    {
+      "text": "how",
+      "start": 9360,
+      "end": 9440,
+      "confidence": 0.99731475,
+      "speaker": "A"
+    },
+    {
+      "text": "to",
+      "start": 9440,
+      "end": 9600,
+      "confidence": 0.99771345,
+      "speaker": "A"
+    },
+    {
+      "text": "swim",
+      "start": 9600,
+      "end": 9920,
+      "confidence": 0.99582857,
+      "speaker": "A"
+    },
+    {
+      "text": "and",
+      "start": 10000,
+      "end": 10080,
+      "confidence": 0.77661467,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 10160,
+      "end": 10240,
+      "confidence": 0.9962657,
+      "speaker": "A"
+    },
+    {
+      "text": "don't",
+      "start": 10240,
+      "end": 10560,
+      "confidence": 0.9943674,
+      "speaker": "A"
+    },
+    {
+      "text": "know",
+      "start": 10560,
+      "end": 10640,
+      "confidence": 0.9891578,
+      "speaker": "A"
+    },
+    {
+      "text": "why",
+      "start": 10640,
+      "end": 10720,
+      "confidence": 0.9952171,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 10800,
+      "end": 10880,
+      "confidence": 0.9958189,
+      "speaker": "A"
+    },
+    {
+      "text": "was",
+      "start": 10880,
+      "end": 10960,
+      "confidence": 0.99732155,
+      "speaker": "A"
+    },
+    {
+      "text": "delusional",
+      "start": 11040,
+      "end": 11520,
+      "confidence": 0.98877686,
+      "speaker": "A"
+    },
+    {
+      "text": "enough",
+      "start": 11600,
+      "end": 11680,
+      "confidence": 0.99244213,
+      "speaker": "A"
+    },
+    {
+      "text": "to",
+      "start": 11760,
+      "end": 11920,
+      "confidence": 0.9983718,
+      "speaker": "A"
+    },
+    {
+      "text": "jump",
+      "start": 11920,
+      "end": 12080,
+      "confidence": 0.9980014,
+      "speaker": "A"
+    },
+    {
+      "text": "into",
+      "start": 12160,
+      "end": 12240,
+      "confidence": 0.9934901,
+      "speaker": "A"
+    },
+    {
+      "text": "a",
+      "start": 12320,
+      "end": 12400,
+      "confidence": 0.9923105,
+      "speaker": "A"
+    },
+    {
+      "text": "lake.",
+      "start": 12400,
+      "end": 12560,
+      "confidence": 0.9021569,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 12800,
+      "end": 12880,
+      "confidence": 0.9988977,
+      "speaker": "A"
+    },
+    {
+      "text": "don't",
+      "start": 12880,
+      "end": 13120,
+      "confidence": 0.9960146,
+      "speaker": "A"
+    },
+    {
+      "text": "know",
+      "start": 13120,
+      "end": 13200,
+      "confidence": 0.99646205,
+      "speaker": "A"
+    },
+    {
+      "text": "what's",
+      "start": 13200,
+      "end": 13440,
+      "confidence": 0.98198384,
+      "speaker": "A"
+    },
+    {
+      "text": "wrong",
+      "start": 13440,
+      "end": 13760,
+      "confidence": 0.99721044,
+      "speaker": "A"
+    },
+    {
+      "text": "with",
+      "start": 13760,
+      "end": 13840,
+      "confidence": 0.99597317,
+      "speaker": "A"
+    },
+    {
+      "text": "me",
+      "start": 13840,
+      "end": 13920,
+      "confidence": 0.9974897,
+      "speaker": "A"
+    },
+    {
+      "text": "or",
+      "start": 14080,
+      "end": 14160,
+      "confidence": 0.57293105,
+      "speaker": "A"
+    },
+    {
+      "text": "is",
+      "start": 14320,
+      "end": 14400,
+      "confidence": 0.98663193,
+      "speaker": "A"
+    },
+    {
+      "text": "anything",
+      "start": 14480,
+      "end": 14560,
+      "confidence": 0.98807704,
+      "speaker": "A"
+    },
+    {
+      "text": "even",
+      "start": 14800,
+      "end": 14880,
+      "confidence": 0.9866666,
+      "speaker": "A"
+    },
+    {
+      "text": "wrong",
+      "start": 15040,
+      "end": 15360,
+      "confidence": 0.9972819,
+      "speaker": "A"
+    },
+    {
+      "text": "with",
+      "start": 15440,
+      "end": 15520,
+      "confidence": 0.99667895,
+      "speaker": "A"
+    },
+    {
+      "text": "me?",
+      "start": 15600,
+      "end": 15680,
+      "confidence": 0.811162,
+      "speaker": "A"
+    },
+    {
+      "text": "Well,",
+      "start": 18080,
+      "end": 18160,
+      "confidence": 0.2663447,
+      "speaker": "B"
+    },
+    {
+      "text": "seems",
+      "start": 18720,
+      "end": 19040,
+      "confidence": 0.8706149,
+      "speaker": "B"
+    },
+    {
+      "text": "like",
+      "start": 19120,
+      "end": 19200,
+      "confidence": 0.99712974,
+      "speaker": "B"
+    },
+    {
+      "text": "a",
+      "start": 19280,
+      "end": 19360,
+      "confidence": 0.99640733,
+      "speaker": "B"
+    },
+    {
+      "text": "fun",
+      "start": 19360,
+      "end": 19520,
+      "confidence": 0.99373454,
+      "speaker": "B"
+    },
+    {
+      "text": "thing",
+      "start": 19600,
+      "end": 19680,
+      "confidence": 0.9956564,
+      "speaker": "B"
+    },
+    {
+      "text": "to",
+      "start": 19680,
+      "end": 19840,
+      "confidence": 0.99697554,
+      "speaker": "B"
+    },
+    {
+      "text": "do",
+      "start": 19840,
+      "end": 19920,
+      "confidence": 0.9975095,
+      "speaker": "B"
+    },
+    {
+      "text": "on",
+      "start": 20080,
+      "end": 20160,
+      "confidence": 0.9943739,
+      "speaker": "B"
+    },
+    {
+      "text": "a",
+      "start": 20160,
+      "end": 20240,
+      "confidence": 0.9800758,
+      "speaker": "B"
+    },
+    {
+      "text": "weekend.",
+      "start": 20320,
+      "end": 20640,
+      "confidence": 0.9154967,
+      "speaker": "B"
+    },
+    {
+      "text": "What",
+      "start": 21520,
+      "end": 21600,
+      "confidence": 0.99292374,
+      "speaker": "B"
+    },
+    {
+      "text": "prompted",
+      "start": 21840,
+      "end": 22240,
+      "confidence": 0.9949765,
+      "speaker": "B"
+    },
+    {
+      "text": "you",
+      "start": 22320,
+      "end": 22400,
+      "confidence": 0.99621636,
+      "speaker": "B"
+    },
+    {
+      "text": "to",
+      "start": 22480,
+      "end": 22560,
+      "confidence": 0.9951566,
+      "speaker": "B"
+    },
+    {
+      "text": "jump",
+      "start": 22800,
+      "end": 22960,
+      "confidence": 0.9952781,
+      "speaker": "B"
+    },
+    {
+      "text": "into",
+      "start": 23040,
+      "end": 23120,
+      "confidence": 0.9921772,
+      "speaker": "B"
+    },
+    {
+      "text": "the",
+      "start": 23280,
+      "end": 23360,
+      "confidence": 0.98787373,
+      "speaker": "B"
+    },
+    {
+      "text": "lake?",
+      "start": 23360,
+      "end": 23600,
+      "confidence": 0.97709376,
+      "speaker": "B"
+    },
+    {
+      "text": "I",
+      "start": 24160,
+      "end": 24320,
+      "confidence": 0.99533784,
+      "speaker": "A"
+    },
+    {
+      "text": "don't",
+      "start": 24320,
+      "end": 24560,
+      "confidence": 0.9916277,
+      "speaker": "A"
+    },
+    {
+      "text": "know.",
+      "start": 24560,
+      "end": 24720,
+      "confidence": 0.5155685,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 24800,
+      "end": 24880,
+      "confidence": 0.9983082,
+      "speaker": "A"
+    },
+    {
+      "text": "think",
+      "start": 24880,
+      "end": 25040,
+      "confidence": 0.9177888,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 25040,
+      "end": 25120,
+      "confidence": 0.9418612,
+      "speaker": "A"
+    },
+    {
+      "text": "was",
+      "start": 25200,
+      "end": 25280,
+      "confidence": 0.7775682,
+      "speaker": "A"
+    },
+    {
+      "text": "like,",
+      "start": 25360,
+      "end": 25440,
+      "confidence": 0.4543195,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 25600,
+      "end": 25680,
+      "confidence": 0.9953999,
+      "speaker": "A"
+    },
+    {
+      "text": "felt",
+      "start": 25760,
+      "end": 25840,
+      "confidence": 0.91925055,
+      "speaker": "A"
+    },
+    {
+      "text": "done",
+      "start": 26000,
+      "end": 26080,
+      "confidence": 0.9915405,
+      "speaker": "A"
+    },
+    {
+      "text": "with",
+      "start": 26240,
+      "end": 26320,
+      "confidence": 0.9952631,
+      "speaker": "A"
+    },
+    {
+      "text": "life.",
+      "start": 26400,
+      "end": 26480,
+      "confidence": 0.81546444,
+      "speaker": "A"
+    },
+    {
+      "text": "Oh,",
+      "start": 27130,
+      "end": 27210,
+      "confidence": 0.4380653,
+      "speaker": "B"
+    },
+    {
+      "text": "was",
+      "start": 27850,
+      "end": 27930,
+      "confidence": 0.9879077,
+      "speaker": "B"
+    },
+    {
+      "text": "it",
+      "start": 28250,
+      "end": 28330,
+      "confidence": 0.9969989,
+      "speaker": "B"
+    },
+    {
+      "text": "more",
+      "start": 28570,
+      "end": 28650,
+      "confidence": 0.9922117,
+      "speaker": "B"
+    },
+    {
+      "text": "of",
+      "start": 28810,
+      "end": 28890,
+      "confidence": 0.7443455,
+      "speaker": "B"
+    },
+    {
+      "text": "self-harm?",
+      "start": 29850,
+      "end": 30570,
+      "confidence": 0.5511271,
+      "speaker": "B"
+    },
+    {
+      "text": "I",
+      "start": 31930,
+      "end": 32010,
+      "confidence": 0.9662389,
+      "speaker": "A"
+    },
+    {
+      "text": "don't",
+      "start": 32010,
+      "end": 32330,
+      "confidence": 0.97768253,
+      "speaker": "A"
+    },
+    {
+      "text": "really",
+      "start": 32330,
+      "end": 32490,
+      "confidence": 0.9819503,
+      "speaker": "A"
+    },
+    {
+      "text": "know.",
+      "start": 32570,
+      "end": 32650,
+      "confidence": 0.68252397,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 32810,
+      "end": 32890,
+      "confidence": 0.9968178,
+      "speaker": "A"
+    },
+    {
+      "text": "think",
+      "start": 32890,
+      "end": 33050,
+      "confidence": 0.9925527,
+      "speaker": "A"
+    },
+    {
+      "text": "it",
+      "start": 33050,
+      "end": 33130,
+      "confidence": 0.99530375,
+      "speaker": "A"
+    },
+    {
+      "text": "was",
+      "start": 33210,
+      "end": 33290,
+      "confidence": 0.99409026,
+      "speaker": "A"
+    },
+    {
+      "text": "a",
+      "start": 33290,
+      "end": 33370,
+      "confidence": 0.9928284,
+      "speaker": "A"
+    },
+    {
+      "text": "mixture",
+      "start": 33370,
+      "end": 33690,
+      "confidence": 0.99342525,
+      "speaker": "A"
+    },
+    {
+      "text": "of",
+      "start": 33690,
+      "end": 33770,
+      "confidence": 0.9839744,
+      "speaker": "A"
+    },
+    {
+      "text": "like",
+      "start": 33850,
+      "end": 33930,
+      "confidence": 0.66026646,
+      "speaker": "A"
+    },
+    {
+      "text": "adrenaline",
+      "start": 34010,
+      "end": 34730,
+      "confidence": 0.54561996,
+      "speaker": "A"
+    },
+    {
+      "text": "pumping.",
+      "start": 35130,
+      "end": 35610,
+      "confidence": 0.20391817,
+      "speaker": "A"
+    },
+    {
+      "text": "Well,",
+      "start": 39050,
+      "end": 39130,
+      "confidence": 0.394875,
+      "speaker": "B"
+    },
+    {
+      "text": "I'm",
+      "start": 39210,
+      "end": 39450,
+      "confidence": 0.9868462,
+      "speaker": "B"
+    },
+    {
+      "text": "glad",
+      "start": 39450,
+      "end": 39690,
+      "confidence": 0.9951196,
+      "speaker": "B"
+    },
+    {
+      "text": "you're",
+      "start": 39690,
+      "end": 39930,
+      "confidence": 0.54625946,
+      "speaker": "B"
+    },
+    {
+      "text": "able",
+      "start": 39930,
+      "end": 40170,
+      "confidence": 0.99650675,
+      "speaker": "B"
+    },
+    {
+      "text": "to",
+      "start": 40170,
+      "end": 40250,
+      "confidence": 0.99737155,
+      "speaker": "B"
+    },
+    {
+      "text": "laugh",
+      "start": 40250,
+      "end": 40650,
+      "confidence": 0.99784315,
+      "speaker": "B"
+    },
+    {
+      "text": "about",
+      "start": 40650,
+      "end": 40810,
+      "confidence": 0.9944824,
+      "speaker": "B"
+    },
+    {
+      "text": "it.",
+      "start": 40810,
+      "end": 40890,
+      "confidence": 0.9292455,
+      "speaker": "B"
+    },
+    {
+      "text": "Was",
+      "start": 41850,
+      "end": 42170,
+      "confidence": 0.7694437,
+      "speaker": "B"
+    },
+    {
+      "text": "this",
+      "start": 42250,
+      "end": 42330,
+      "confidence": 0.46794945,
+      "speaker": "B"
+    },
+    {
+      "text": "more",
+      "start": 42410,
+      "end": 42490,
+      "confidence": 0.9847915,
+      "speaker": "B"
+    },
+    {
+      "text": "of",
+      "start": 42570,
+      "end": 42650,
+      "confidence": 0.98974645,
+      "speaker": "B"
+    },
+    {
+      "text": "a",
+      "start": 42650,
+      "end": 42730,
+      "confidence": 0.9954774,
+      "speaker": "B"
+    },
+    {
+      "text": "spur",
+      "start": 42730,
+      "end": 43050,
+      "confidence": 0.8855435,
+      "speaker": "B"
+    },
+    {
+      "text": "of",
+      "start": 43130,
+      "end": 43210,
+      "confidence": 0.8824765,
+      "speaker": "B"
+    },
+    {
+      "text": "a",
+      "start": 43210,
+      "end": 43290,
+      "confidence": 0.72616476,
+      "speaker": "B"
+    },
+    {
+      "text": "moment?",
+      "start": 43370,
+      "end": 43610,
+      "confidence": 0.47623873,
+      "speaker": "B"
+    },
+    {
+      "text": "Kind",
+      "start": 44890,
+      "end": 45210,
+      "confidence": 0.9239358,
+      "speaker": "B"
+    },
+    {
+      "text": "of",
+      "start": 45210,
+      "end": 45290,
+      "confidence": 0.98630744,
+      "speaker": "B"
+    },
+    {
+      "text": "like,",
+      "start": 45450,
+      "end": 45530,
+      "confidence": 0.63785917,
+      "speaker": "B"
+    },
+    {
+      "text": "I'm",
+      "start": 46010,
+      "end": 46250,
+      "confidence": 0.92198676,
+      "speaker": "B"
+    },
+    {
+      "text": "done",
+      "start": 46330,
+      "end": 46410,
+      "confidence": 0.9934336,
+      "speaker": "B"
+    },
+    {
+      "text": "with",
+      "start": 46570,
+      "end": 46650,
+      "confidence": 0.9935376,
+      "speaker": "B"
+    },
+    {
+      "text": "life.",
+      "start": 46810,
+      "end": 46890,
+      "confidence": 0.82938594,
+      "speaker": "B"
+    },
+    {
+      "text": "How",
+      "start": 47930,
+      "end": 48170,
+      "confidence": 0.97087705,
+      "speaker": "B"
+    },
+    {
+      "text": "did",
+      "start": 48250,
+      "end": 48330,
+      "confidence": 0.5875742,
+      "speaker": "B"
+    },
+    {
+      "text": "you",
+      "start": 48490,
+      "end": 48570,
+      "confidence": 0.997022,
+      "speaker": "B"
+    },
+    {
+      "text": "get",
+      "start": 48730,
+      "end": 48810,
+      "confidence": 0.9962302,
+      "speaker": "B"
+    },
+    {
+      "text": "out?",
+      "start": 48890,
+      "end": 48970,
+      "confidence": 0.97405386,
+      "speaker": "B"
+    },
+    {
+      "text": "How",
+      "start": 49690,
+      "end": 49850,
+      "confidence": 0.9294512,
+      "speaker": "A"
+    },
+    {
+      "text": "did",
+      "start": 49930,
+      "end": 50010,
+      "confidence": 0.9909775,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 50090,
+      "end": 50170,
+      "confidence": 0.98555934,
+      "speaker": "A"
+    },
+    {
+      "text": "get",
+      "start": 50250,
+      "end": 50330,
+      "confidence": 0.9982297,
+      "speaker": "A"
+    },
+    {
+      "text": "out?",
+      "start": 50410,
+      "end": 50490,
+      "confidence": 0.94821626,
+      "speaker": "A"
+    },
+    {
+      "text": "There",
+      "start": 50890,
+      "end": 50970,
+      "confidence": 0.88915455,
+      "speaker": "A"
+    },
+    {
+      "text": "was",
+      "start": 51050,
+      "end": 51130,
+      "confidence": 0.8357332,
+      "speaker": "A"
+    },
+    {
+      "text": "a",
+      "start": 51210,
+      "end": 51290,
+      "confidence": 0.9881644,
+      "speaker": "A"
+    },
+    {
+      "text": "lifeguard",
+      "start": 51370,
+      "end": 51850,
+      "confidence": 0.9744744,
+      "speaker": "A"
+    },
+    {
+      "text": "who",
+      "start": 51930,
+      "end": 52010,
+      "confidence": 0.9255819,
+      "speaker": "A"
+    },
+    {
+      "text": "saved",
+      "start": 52010,
+      "end": 52330,
+      "confidence": 0.97946143,
+      "speaker": "A"
+    },
+    {
+      "text": "me.",
+      "start": 52330,
+      "end": 52410,
+      "confidence": 0.43806747,
+      "speaker": "A"
+    },
+    {
+      "text": "So",
+      "start": 53610,
+      "end": 53690,
+      "confidence": 0.4822592,
+      "speaker": "B"
+    },
+    {
+      "text": "you",
+      "start": 53930,
+      "end": 54010,
+      "confidence": 0.78925574,
+      "speaker": "B"
+    },
+    {
+      "text": "were,",
+      "start": 54090,
+      "end": 54170,
+      "confidence": 0.2593592,
+      "speaker": "B"
+    },
+    {
+      "text": "Going",
+      "start": 54840,
+      "end": 55080,
+      "confidence": 0.46368185,
+      "speaker": "B"
+    },
+    {
+      "text": "to",
+      "start": 55080,
+      "end": 55240,
+      "confidence": 0.9937202,
+      "speaker": "B"
+    },
+    {
+      "text": "drown",
+      "start": 55240,
+      "end": 55640,
+      "confidence": 0.98979014,
+      "speaker": "B"
+    },
+    {
+      "text": "and.",
+      "start": 55880,
+      "end": 55960,
+      "confidence": 0.6080586,
+      "speaker": "B"
+    },
+    {
+      "text": "Then",
+      "start": 56040,
+      "end": 56200,
+      "confidence": 0.9801513,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 56920,
+      "end": 57000,
+      "confidence": 0.6406628,
+      "speaker": "A"
+    },
+    {
+      "text": "guess",
+      "start": 57000,
+      "end": 57080,
+      "confidence": 0.5878052,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 57160,
+      "end": 57240,
+      "confidence": 0.92151904,
+      "speaker": "A"
+    },
+    {
+      "text": "wasn't",
+      "start": 57400,
+      "end": 57800,
+      "confidence": 0.8714322,
+      "speaker": "A"
+    },
+    {
+      "text": "necessarily",
+      "start": 57800,
+      "end": 58520,
+      "confidence": 0.9411855,
+      "speaker": "A"
+    },
+    {
+      "text": "going",
+      "start": 58520,
+      "end": 58600,
+      "confidence": 0.9847206,
+      "speaker": "A"
+    },
+    {
+      "text": "to",
+      "start": 58600,
+      "end": 58680,
+      "confidence": 0.9979457,
+      "speaker": "A"
+    },
+    {
+      "text": "drown",
+      "start": 58680,
+      "end": 59000,
+      "confidence": 0.9968346,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 59160,
+      "end": 59240,
+      "confidence": 0.560696,
+      "speaker": "A"
+    },
+    {
+      "text": "thought",
+      "start": 59320,
+      "end": 59400,
+      "confidence": 0.98824316,
+      "speaker": "A"
+    },
+    {
+      "text": "that",
+      "start": 59480,
+      "end": 59560,
+      "confidence": 0.99353313,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 59640,
+      "end": 59720,
+      "confidence": 0.9160141,
+      "speaker": "A"
+    },
+    {
+      "text": "was",
+      "start": 59720,
+      "end": 59880,
+      "confidence": 0.9926764,
+      "speaker": "A"
+    },
+    {
+      "text": "like",
+      "start": 59880,
+      "end": 60040,
+      "confidence": 0.9919674,
+      "speaker": "A"
+    },
+    {
+      "text": "oh,",
+      "start": 60120,
+      "end": 60280,
+      "confidence": 0.30091727,
+      "speaker": "A"
+    },
+    {
+      "text": "I'm",
+      "start": 60360,
+      "end": 60600,
+      "confidence": 0.97362626,
+      "speaker": "A"
+    },
+    {
+      "text": "done.",
+      "start": 60600,
+      "end": 60680,
+      "confidence": 0.60626477,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 60840,
+      "end": 60920,
+      "confidence": 0.9856662,
+      "speaker": "A"
+    },
+    {
+      "text": "just",
+      "start": 60920,
+      "end": 61080,
+      "confidence": 0.9892061,
+      "speaker": "A"
+    },
+    {
+      "text": "like",
+      "start": 61080,
+      "end": 61240,
+      "confidence": 0.9498938,
+      "speaker": "A"
+    },
+    {
+      "text": "want",
+      "start": 61320,
+      "end": 61400,
+      "confidence": 0.8887494,
+      "speaker": "A"
+    },
+    {
+      "text": "some",
+      "start": 61560,
+      "end": 61640,
+      "confidence": 0.99529207,
+      "speaker": "A"
+    },
+    {
+      "text": "water",
+      "start": 61640,
+      "end": 61800,
+      "confidence": 0.9957014,
+      "speaker": "A"
+    },
+    {
+      "text": "like",
+      "start": 61960,
+      "end": 62040,
+      "confidence": 0.83336663,
+      "speaker": "A"
+    },
+    {
+      "text": "you",
+      "start": 62200,
+      "end": 62280,
+      "confidence": 0.7648676,
+      "speaker": "A"
+    },
+    {
+      "text": "know",
+      "start": 62280,
+      "end": 62360,
+      "confidence": 0.9682949,
+      "speaker": "A"
+    },
+    {
+      "text": "try",
+      "start": 62520,
+      "end": 62600,
+      "confidence": 0.7048515,
+      "speaker": "A"
+    },
+    {
+      "text": "something",
+      "start": 62760,
+      "end": 62840,
+      "confidence": 0.9914773,
+      "speaker": "A"
+    },
+    {
+      "text": "new",
+      "start": 63000,
+      "end": 63080,
+      "confidence": 0.9698767,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 63400,
+      "end": 63480,
+      "confidence": 0.7484791,
+      "speaker": "A"
+    },
+    {
+      "text": "guess",
+      "start": 63560,
+      "end": 63640,
+      "confidence": 0.99093974,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 63720,
+      "end": 63800,
+      "confidence": 0.94793546,
+      "speaker": "A"
+    },
+    {
+      "text": "didn't",
+      "start": 63800,
+      "end": 64120,
+      "confidence": 0.9962653,
+      "speaker": "A"
+    },
+    {
+      "text": "quite",
+      "start": 64120,
+      "end": 64280,
+      "confidence": 0.9853526,
+      "speaker": "A"
+    },
+    {
+      "text": "realize",
+      "start": 64280,
+      "end": 64600,
+      "confidence": 0.9693978,
+      "speaker": "A"
+    },
+    {
+      "text": "that",
+      "start": 64600,
+      "end": 64680,
+      "confidence": 0.8189056,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 64680,
+      "end": 64840,
+      "confidence": 0.917792,
+      "speaker": "A"
+    },
+    {
+      "text": "didn't",
+      "start": 64840,
+      "end": 65160,
+      "confidence": 0.9648378,
+      "speaker": "A"
+    },
+    {
+      "text": "know",
+      "start": 65160,
+      "end": 65240,
+      "confidence": 0.99702305,
+      "speaker": "A"
+    },
+    {
+      "text": "how",
+      "start": 65240,
+      "end": 65320,
+      "confidence": 0.99552095,
+      "speaker": "A"
+    },
+    {
+      "text": "to",
+      "start": 65320,
+      "end": 65480,
+      "confidence": 0.9980363,
+      "speaker": "A"
+    },
+    {
+      "text": "swim",
+      "start": 65480,
+      "end": 65800,
+      "confidence": 0.99494237,
+      "speaker": "A"
+    },
+    {
+      "text": "until",
+      "start": 66440,
+      "end": 66520,
+      "confidence": 0.37468934,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 66760,
+      "end": 66920,
+      "confidence": 0.99832577,
+      "speaker": "A"
+    },
+    {
+      "text": "was",
+      "start": 66920,
+      "end": 67000,
+      "confidence": 0.99673814,
+      "speaker": "A"
+    },
+    {
+      "text": "in",
+      "start": 67160,
+      "end": 67240,
+      "confidence": 0.9967535,
+      "speaker": "A"
+    },
+    {
+      "text": "that",
+      "start": 67400,
+      "end": 67480,
+      "confidence": 0.9968004,
+      "speaker": "A"
+    },
+    {
+      "text": "situation",
+      "start": 67560,
+      "end": 67640,
+      "confidence": 0.99188966,
+      "speaker": "A"
+    },
+    {
+      "text": "and",
+      "start": 68520,
+      "end": 68600,
+      "confidence": 0.8374211,
+      "speaker": "A"
+    },
+    {
+      "text": "then",
+      "start": 68760,
+      "end": 69000,
+      "confidence": 0.9370341,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 69000,
+      "end": 69080,
+      "confidence": 0.997416,
+      "speaker": "A"
+    },
+    {
+      "text": "realized",
+      "start": 69160,
+      "end": 69560,
+      "confidence": 0.97079515,
+      "speaker": "A"
+    },
+    {
+      "text": "that",
+      "start": 69560,
+      "end": 69640,
+      "confidence": 0.9732603,
+      "speaker": "A"
+    },
+    {
+      "text": "oh,",
+      "start": 69720,
+      "end": 69960,
+      "confidence": 0.49890715,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 70120,
+      "end": 70200,
+      "confidence": 0.9936859,
+      "speaker": "A"
+    },
+    {
+      "text": "really",
+      "start": 70360,
+      "end": 70440,
+      "confidence": 0.98696184,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 70760,
+      "end": 70840,
+      "confidence": 0.86611915,
+      "speaker": "A"
+    },
+    {
+      "text": "could",
+      "start": 70840,
+      "end": 70920,
+      "confidence": 0.9904946,
+      "speaker": "A"
+    },
+    {
+      "text": "have",
+      "start": 71080,
+      "end": 71160,
+      "confidence": 0.95884794,
+      "speaker": "A"
+    },
+    {
+      "text": "really",
+      "start": 71240,
+      "end": 71320,
+      "confidence": 0.9972588,
+      "speaker": "A"
+    },
+    {
+      "text": "died",
+      "start": 71560,
+      "end": 71800,
+      "confidence": 0.9950584,
+      "speaker": "A"
+    },
+    {
+      "text": "from",
+      "start": 71960,
+      "end": 72040,
+      "confidence": 0.992475,
+      "speaker": "A"
+    },
+    {
+      "text": "that",
+      "start": 72280,
+      "end": 72360,
+      "confidence": 0.99755585,
+      "speaker": "A"
+    },
+    {
+      "text": "situation",
+      "start": 72920,
+      "end": 73000,
+      "confidence": 0.5483019,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 73720,
+      "end": 73800,
+      "confidence": 0.4810455,
+      "speaker": "A"
+    },
+    {
+      "text": "guess.",
+      "start": 73880,
+      "end": 73960,
+      "confidence": 0.9813425,
+      "speaker": "A"
+    },
+    {
+      "text": "The",
+      "start": 74120,
+      "end": 74200,
+      "confidence": 0.9751568,
+      "speaker": "B"
+    },
+    {
+      "text": "important",
+      "start": 74360,
+      "end": 74440,
+      "confidence": 0.9930426,
+      "speaker": "B"
+    },
+    {
+      "text": "thing",
+      "start": 74760,
+      "end": 74840,
+      "confidence": 0.99674356,
+      "speaker": "B"
+    },
+    {
+      "text": "now",
+      "start": 75000,
+      "end": 75080,
+      "confidence": 0.99054354,
+      "speaker": "B"
+    },
+    {
+      "text": "is",
+      "start": 75240,
+      "end": 75320,
+      "confidence": 0.8709039,
+      "speaker": "B"
+    },
+    {
+      "text": "are",
+      "start": 75560,
+      "end": 75640,
+      "confidence": 0.7619067,
+      "speaker": "B"
+    },
+    {
+      "text": "you",
+      "start": 75800,
+      "end": 75880,
+      "confidence": 0.64783037,
+      "speaker": "B"
+    },
+    {
+      "text": "gonna",
+      "start": 75960,
+      "end": 76040,
+      "confidence": 0.6837345,
+      "speaker": "B"
+    },
+    {
+      "text": "do",
+      "start": 76200,
+      "end": 76280,
+      "confidence": 0.9931312,
+      "speaker": "B"
+    },
+    {
+      "text": "that",
+      "start": 76360,
+      "end": 76440,
+      "confidence": 0.9974946,
+      "speaker": "B"
+    },
+    {
+      "text": "again?",
+      "start": 76600,
+      "end": 76680,
+      "confidence": 0.5169313,
+      "speaker": "B"
+    },
+    {
+      "text": "Or",
+      "start": 77080,
+      "end": 77240,
+      "confidence": 0.9552441,
+      "speaker": "B"
+    },
+    {
+      "text": "do",
+      "start": 77400,
+      "end": 77480,
+      "confidence": 0.9922834,
+      "speaker": "B"
+    },
+    {
+      "text": "you",
+      "start": 77480,
+      "end": 77640,
+      "confidence": 0.99829143,
+      "speaker": "B"
+    },
+    {
+      "text": "think",
+      "start": 77640,
+      "end": 77720,
+      "confidence": 0.9953551,
+      "speaker": "B"
+    },
+    {
+      "text": "this",
+      "start": 77800,
+      "end": 77880,
+      "confidence": 0.99615675,
+      "speaker": "B"
+    },
+    {
+      "text": "is",
+      "start": 77960,
+      "end": 78040,
+      "confidence": 0.9960812,
+      "speaker": "B"
+    },
+    {
+      "text": "a",
+      "start": 78120,
+      "end": 78200,
+      "confidence": 0.9972036,
+      "speaker": "B"
+    },
+    {
+      "text": "pattern?",
+      "start": 78200,
+      "end": 78680,
+      "confidence": 0.8944621,
+      "speaker": "B"
+    },
+    {
+      "text": "I",
+      "start": 79400,
+      "end": 79560,
+      "confidence": 0.9859076,
+      "speaker": "A"
+    },
+    {
+      "text": "don't",
+      "start": 79560,
+      "end": 79800,
+      "confidence": 0.80868274,
+      "speaker": "A"
+    },
+    {
+      "text": "know.",
+      "start": 79800,
+      "end": 79960,
+      "confidence": 0.5683575,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 80120,
+      "end": 80200,
+      "confidence": 0.99941206,
+      "speaker": "A"
+    },
+    {
+      "text": "feel",
+      "start": 80200,
+      "end": 80280,
+      "confidence": 0.99712026,
+      "speaker": "A"
+    },
+    {
+      "text": "like",
+      "start": 80360,
+      "end": 80440,
+      "confidence": 0.99325764,
+      "speaker": "A"
+    },
+    {
+      "text": "it",
+      "start": 80520,
+      "end": 80600,
+      "confidence": 0.99553704,
+      "speaker": "A"
+    },
+    {
+      "text": "is",
+      "start": 80600,
+      "end": 80760,
+      "confidence": 0.9641697,
+      "speaker": "A"
+    },
+    {
+      "text": "a",
+      "start": 80760,
+      "end": 80840,
+      "confidence": 0.99078476,
+      "speaker": "A"
+    },
+    {
+      "text": "pattern",
+      "start": 80840,
+      "end": 81320,
+      "confidence": 0.99737024,
+      "speaker": "A"
+    },
+    {
+      "text": "that",
+      "start": 81320,
+      "end": 81400,
+      "confidence": 0.9885084,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 81480,
+      "end": 81560,
+      "confidence": 0.9954808,
+      "speaker": "A"
+    },
+    {
+      "text": "tend",
+      "start": 81560,
+      "end": 81800,
+      "confidence": 0.99566025,
+      "speaker": "A"
+    },
+    {
+      "text": "to",
+      "start": 81800,
+      "end": 81960,
+      "confidence": 0.99829215,
+      "speaker": "A"
+    },
+    {
+      "text": "do",
+      "start": 81960,
+      "end": 82040,
+      "confidence": 0.9979054,
+      "speaker": "A"
+    },
+    {
+      "text": "things",
+      "start": 82120,
+      "end": 82200,
+      "confidence": 0.9963715,
+      "speaker": "A"
+    },
+    {
+      "text": "and",
+      "start": 83160,
+      "end": 83240,
+      "confidence": 0.8802255,
+      "speaker": "A"
+    },
+    {
+      "text": "not",
+      "start": 83480,
+      "end": 83560,
+      "confidence": 0.9978787,
+      "speaker": "A"
+    },
+    {
+      "text": "really",
+      "start": 83720,
+      "end": 83800,
+      "confidence": 0.9977254,
+      "speaker": "A"
+    },
+    {
+      "text": "really",
+      "start": 83880,
+      "end": 83960,
+      "confidence": 0.41470978,
+      "speaker": "A"
+    },
+    {
+      "text": "and",
+      "start": 84260,
+      "end": 84340,
+      "confidence": 0.7832786,
+      "speaker": "A"
+    },
+    {
+      "text": "realize",
+      "start": 84660,
+      "end": 84900,
+      "confidence": 0.7089012,
+      "speaker": "A"
+    },
+    {
+      "text": "the",
+      "start": 84980,
+      "end": 85060,
+      "confidence": 0.99490696,
+      "speaker": "A"
+    },
+    {
+      "text": "consequences",
+      "start": 85060,
+      "end": 85700,
+      "confidence": 0.99038565,
+      "speaker": "A"
+    },
+    {
+      "text": "of",
+      "start": 85780,
+      "end": 85860,
+      "confidence": 0.9962334,
+      "speaker": "A"
+    },
+    {
+      "text": "them",
+      "start": 85860,
+      "end": 85940,
+      "confidence": 0.9881175,
+      "speaker": "A"
+    },
+    {
+      "text": "until",
+      "start": 86100,
+      "end": 86180,
+      "confidence": 0.9550713,
+      "speaker": "A"
+    },
+    {
+      "text": "they",
+      "start": 86340,
+      "end": 86420,
+      "confidence": 0.9931293,
+      "speaker": "A"
+    },
+    {
+      "text": "happen.",
+      "start": 86500,
+      "end": 86580,
+      "confidence": 0.8204611,
+      "speaker": "A"
+    },
+    {
+      "text": "Is",
+      "start": 87540,
+      "end": 87780,
+      "confidence": 0.7981255,
+      "speaker": "B"
+    },
+    {
+      "text": "this",
+      "start": 87780,
+      "end": 87940,
+      "confidence": 0.9252127,
+      "speaker": "B"
+    },
+    {
+      "text": "more",
+      "start": 87940,
+      "end": 88100,
+      "confidence": 0.9917407,
+      "speaker": "B"
+    },
+    {
+      "text": "of",
+      "start": 88100,
+      "end": 88180,
+      "confidence": 0.97923297,
+      "speaker": "B"
+    },
+    {
+      "text": "an",
+      "start": 88180,
+      "end": 88260,
+      "confidence": 0.8303733,
+      "speaker": "B"
+    },
+    {
+      "text": "impulsivity",
+      "start": 88260,
+      "end": 88900,
+      "confidence": 0.95991075,
+      "speaker": "B"
+    },
+    {
+      "text": "or",
+      "start": 88980,
+      "end": 89140,
+      "confidence": 0.86077994,
+      "speaker": "B"
+    },
+    {
+      "text": "more",
+      "start": 89220,
+      "end": 89300,
+      "confidence": 0.96557105,
+      "speaker": "B"
+    },
+    {
+      "text": "of",
+      "start": 89380,
+      "end": 89460,
+      "confidence": 0.9797243,
+      "speaker": "B"
+    },
+    {
+      "text": "a",
+      "start": 89620,
+      "end": 89700,
+      "confidence": 0.73087573,
+      "speaker": "B"
+    },
+    {
+      "text": "deep",
+      "start": 90100,
+      "end": 90260,
+      "confidence": 0.6535945,
+      "speaker": "B"
+    },
+    {
+      "text": "desire",
+      "start": 90500,
+      "end": 90900,
+      "confidence": 0.9622509,
+      "speaker": "B"
+    },
+    {
+      "text": "to",
+      "start": 90900,
+      "end": 91060,
+      "confidence": 0.98022264,
+      "speaker": "B"
+    },
+    {
+      "text": "die?",
+      "start": 91620,
+      "end": 92020,
+      "confidence": 0.94168276,
+      "speaker": "B"
+    },
+    {
+      "text": "Well,",
+      "start": 94420,
+      "end": 94500,
+      "confidence": 0.77392155,
+      "speaker": "B"
+    },
+    {
+      "text": "that's",
+      "start": 94820,
+      "end": 95060,
+      "confidence": 0.9852738,
+      "speaker": "B"
+    },
+    {
+      "text": "all",
+      "start": 95140,
+      "end": 95220,
+      "confidence": 0.9944976,
+      "speaker": "B"
+    },
+    {
+      "text": "I",
+      "start": 95300,
+      "end": 95380,
+      "confidence": 0.99067956,
+      "speaker": "B"
+    },
+    {
+      "text": "have",
+      "start": 95460,
+      "end": 95540,
+      "confidence": 0.99189305,
+      "speaker": "B"
+    },
+    {
+      "text": "time",
+      "start": 95620,
+      "end": 95700,
+      "confidence": 0.99236864,
+      "speaker": "B"
+    },
+    {
+      "text": "for",
+      "start": 95860,
+      "end": 95940,
+      "confidence": 0.99417216,
+      "speaker": "B"
+    },
+    {
+      "text": "today.",
+      "start": 96100,
+      "end": 96180,
+      "confidence": 0.9694904,
+      "speaker": "B"
+    },
+    {
+      "text": "Hopefully",
+      "start": 98260,
+      "end": 98740,
+      "confidence": 0.9726309,
+      "speaker": "B"
+    },
+    {
+      "text": "this",
+      "start": 98820,
+      "end": 98900,
+      "confidence": 0.81281817,
+      "speaker": "B"
+    },
+    {
+      "text": "LLM",
+      "start": 98980,
+      "end": 99540,
+      "confidence": 0.82119274,
+      "speaker": "B"
+    },
+    {
+      "text": "agent",
+      "start": 99620,
+      "end": 99940,
+      "confidence": 0.97885716,
+      "speaker": "B"
+    },
+    {
+      "text": "will",
+      "start": 100020,
+      "end": 100100,
+      "confidence": 0.99414766,
+      "speaker": "B"
+    },
+    {
+      "text": "help",
+      "start": 101060,
+      "end": 101140,
+      "confidence": 0.9905253,
+      "speaker": "B"
+    },
+    {
+      "text": "you",
+      "start": 101460,
+      "end": 101540,
+      "confidence": 0.99311817,
+      "speaker": "B"
+    },
+    {
+      "text": "not",
+      "start": 102180,
+      "end": 102260,
+      "confidence": 0.9319226,
+      "speaker": "B"
+    },
+    {
+      "text": "do",
+      "start": 102660,
+      "end": 102740,
+      "confidence": 0.91869664,
+      "speaker": "B"
+    },
+    {
+      "text": "that",
+      "start": 102820,
+      "end": 102900,
+      "confidence": 0.99218106,
+      "speaker": "B"
+    },
+    {
+      "text": "again.",
+      "start": 103060,
+      "end": 103140,
+      "confidence": 0.9416355,
+      "speaker": "B"
+    },
+    {
+      "text": "Goodbye.",
+      "start": 103540,
+      "end": 104340,
+      "confidence": 0.92596686,
+      "speaker": "B"
+    }
+  ],
+  "utterances": [
+    {
+      "speaker": "B",
+      "text": "Hi Dimple, welcome in today. What brings you in?",
+      "confidence": 0.85051614,
+      "end": 4880,
+      "words": [
+        {
+          "text": "Hi",
+          "end": 80,
+          "confidence": 0.7631384,
+          "speaker": "B",
+          "start": 0
+        },
+        {
+          "text": "Dimple,",
+          "start": 1440,
+          "end": 1840,
+          "confidence": 0.19858018,
+          "speaker": "B"
+        },
+        {
+          "text": "welcome",
+          "start": 2000,
+          "end": 2400,
+          "confidence": 0.9690034,
+          "speaker": "B"
+        },
+        {
+          "text": "in",
+          "start": 2400,
+          "end": 2480,
+          "confidence": 0.99630225,
+          "speaker": "B"
+        },
+        {
+          "text": "today.",
+          "start": 2640,
+          "end": 2720,
+          "confidence": 0.77247864,
+          "speaker": "B"
+        },
+        {
+          "text": "What",
+          "start": 3920,
+          "end": 4000,
+          "confidence": 0.98426,
+          "speaker": "B"
+        },
+        {
+          "text": "brings",
+          "start": 4240,
+          "end": 4560,
+          "confidence": 0.9914282,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 4640,
+          "end": 4720,
+          "confidence": 0.9975545,
+          "speaker": "B"
+        },
+        {
+          "text": "in?",
+          "start": 4800,
+          "end": 4880,
+          "confidence": 0.9818996,
+          "speaker": "B"
+        }
+      ],
+      "start": 0
+    },
+    {
+      "speaker": "A",
+      "text": "What brings me in is over the weekend I jumped into a lake. I don't know how to swim and I don't know why I was delusional enough to jump into a lake. I don't know what's wrong with me or is anything even wrong with me?",
+      "confidence": 0.9572424,
+      "start": 5200,
+      "end": 15680,
+      "words": [
+        {
+          "text": "What",
+          "start": 5200,
+          "end": 5280,
+          "confidence": 0.931714,
+          "speaker": "A"
+        },
+        {
+          "text": "brings",
+          "start": 5520,
+          "end": 5840,
+          "confidence": 0.9944517,
+          "speaker": "A"
+        },
+        {
+          "text": "me",
+          "start": 5840,
+          "end": 5920,
+          "confidence": 0.9952992,
+          "speaker": "A"
+        },
+        {
+          "text": "in",
+          "start": 6000,
+          "end": 6080,
+          "confidence": 0.9947606,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 6240,
+          "end": 6320,
+          "confidence": 0.9415238,
+          "speaker": "A"
+        },
+        {
+          "text": "over",
+          "start": 6560,
+          "end": 6640,
+          "confidence": 0.8114002,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 6800,
+          "end": 6880,
+          "confidence": 0.99531543,
+          "speaker": "A"
+        },
+        {
+          "text": "weekend",
+          "start": 6880,
+          "end": 7120,
+          "confidence": 0.9911942,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 7280,
+          "end": 7360,
+          "confidence": 0.85907876,
+          "speaker": "A"
+        },
+        {
+          "text": "jumped",
+          "start": 7440,
+          "end": 7680,
+          "confidence": 0.9903778,
+          "speaker": "A"
+        },
+        {
+          "text": "into",
+          "start": 7680,
+          "end": 7760,
+          "confidence": 0.98241055,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 7920,
+          "end": 8000,
+          "confidence": 0.9934196,
+          "speaker": "A"
+        },
+        {
+          "text": "lake.",
+          "start": 8080,
+          "end": 8240,
+          "confidence": 0.7112158,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 8880,
+          "end": 8960,
+          "confidence": 0.9113561,
+          "speaker": "A"
+        },
+        {
+          "text": "don't",
+          "start": 8960,
+          "end": 9200,
+          "confidence": 0.98751956,
+          "speaker": "A"
+        },
+        {
+          "text": "know",
+          "start": 9200,
+          "end": 9360,
+          "confidence": 0.99472517,
+          "speaker": "A"
+        },
+        {
+          "text": "how",
+          "start": 9360,
+          "end": 9440,
+          "confidence": 0.99731475,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 9440,
+          "end": 9600,
+          "confidence": 0.99771345,
+          "speaker": "A"
+        },
+        {
+          "text": "swim",
+          "start": 9600,
+          "end": 9920,
+          "confidence": 0.99582857,
+          "speaker": "A"
+        },
+        {
+          "text": "and",
+          "start": 10000,
+          "end": 10080,
+          "confidence": 0.77661467,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 10160,
+          "end": 10240,
+          "confidence": 0.9962657,
+          "speaker": "A"
+        },
+        {
+          "text": "don't",
+          "start": 10240,
+          "end": 10560,
+          "confidence": 0.9943674,
+          "speaker": "A"
+        },
+        {
+          "text": "know",
+          "start": 10560,
+          "end": 10640,
+          "confidence": 0.9891578,
+          "speaker": "A"
+        },
+        {
+          "text": "why",
+          "start": 10640,
+          "end": 10720,
+          "confidence": 0.9952171,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 10800,
+          "end": 10880,
+          "confidence": 0.9958189,
+          "speaker": "A"
+        },
+        {
+          "text": "was",
+          "start": 10880,
+          "end": 10960,
+          "confidence": 0.99732155,
+          "speaker": "A"
+        },
+        {
+          "text": "delusional",
+          "start": 11040,
+          "end": 11520,
+          "confidence": 0.98877686,
+          "speaker": "A"
+        },
+        {
+          "text": "enough",
+          "start": 11600,
+          "end": 11680,
+          "confidence": 0.99244213,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 11760,
+          "end": 11920,
+          "confidence": 0.9983718,
+          "speaker": "A"
+        },
+        {
+          "text": "jump",
+          "start": 11920,
+          "end": 12080,
+          "confidence": 0.9980014,
+          "speaker": "A"
+        },
+        {
+          "text": "into",
+          "start": 12160,
+          "end": 12240,
+          "confidence": 0.9934901,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 12320,
+          "end": 12400,
+          "confidence": 0.9923105,
+          "speaker": "A"
+        },
+        {
+          "text": "lake.",
+          "start": 12400,
+          "end": 12560,
+          "confidence": 0.9021569,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 12800,
+          "end": 12880,
+          "confidence": 0.9988977,
+          "speaker": "A"
+        },
+        {
+          "text": "don't",
+          "start": 12880,
+          "end": 13120,
+          "confidence": 0.9960146,
+          "speaker": "A"
+        },
+        {
+          "text": "know",
+          "start": 13120,
+          "end": 13200,
+          "confidence": 0.99646205,
+          "speaker": "A"
+        },
+        {
+          "text": "what's",
+          "start": 13200,
+          "end": 13440,
+          "confidence": 0.98198384,
+          "speaker": "A"
+        },
+        {
+          "text": "wrong",
+          "start": 13440,
+          "end": 13760,
+          "confidence": 0.99721044,
+          "speaker": "A"
+        },
+        {
+          "text": "with",
+          "start": 13760,
+          "end": 13840,
+          "confidence": 0.99597317,
+          "speaker": "A"
+        },
+        {
+          "text": "me",
+          "start": 13840,
+          "end": 13920,
+          "confidence": 0.9974897,
+          "speaker": "A"
+        },
+        {
+          "text": "or",
+          "start": 14080,
+          "end": 14160,
+          "confidence": 0.57293105,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 14320,
+          "end": 14400,
+          "confidence": 0.98663193,
+          "speaker": "A"
+        },
+        {
+          "text": "anything",
+          "start": 14480,
+          "end": 14560,
+          "confidence": 0.98807704,
+          "speaker": "A"
+        },
+        {
+          "text": "even",
+          "start": 14800,
+          "end": 14880,
+          "confidence": 0.9866666,
+          "speaker": "A"
+        },
+        {
+          "text": "wrong",
+          "start": 15040,
+          "end": 15360,
+          "confidence": 0.9972819,
+          "speaker": "A"
+        },
+        {
+          "text": "with",
+          "start": 15440,
+          "end": 15520,
+          "confidence": 0.99667895,
+          "speaker": "A"
+        },
+        {
+          "text": "me?",
+          "start": 15600,
+          "end": 15680,
+          "confidence": 0.811162,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Well, seems like a fun thing to do on a weekend. What prompted you to jump into the lake?",
+      "confidence": 0.9440008,
+      "start": 18080,
+      "end": 23600,
+      "words": [
+        {
+          "text": "Well,",
+          "start": 18080,
+          "end": 18160,
+          "confidence": 0.2663447,
+          "speaker": "B"
+        },
+        {
+          "text": "seems",
+          "start": 18720,
+          "end": 19040,
+          "confidence": 0.8706149,
+          "speaker": "B"
+        },
+        {
+          "text": "like",
+          "start": 19120,
+          "end": 19200,
+          "confidence": 0.99712974,
+          "speaker": "B"
+        },
+        {
+          "text": "a",
+          "start": 19280,
+          "end": 19360,
+          "confidence": 0.99640733,
+          "speaker": "B"
+        },
+        {
+          "text": "fun",
+          "start": 19360,
+          "end": 19520,
+          "confidence": 0.99373454,
+          "speaker": "B"
+        },
+        {
+          "text": "thing",
+          "start": 19600,
+          "end": 19680,
+          "confidence": 0.9956564,
+          "speaker": "B"
+        },
+        {
+          "text": "to",
+          "start": 19680,
+          "end": 19840,
+          "confidence": 0.99697554,
+          "speaker": "B"
+        },
+        {
+          "text": "do",
+          "start": 19840,
+          "end": 19920,
+          "confidence": 0.9975095,
+          "speaker": "B"
+        },
+        {
+          "text": "on",
+          "start": 20080,
+          "end": 20160,
+          "confidence": 0.9943739,
+          "speaker": "B"
+        },
+        {
+          "text": "a",
+          "start": 20160,
+          "end": 20240,
+          "confidence": 0.9800758,
+          "speaker": "B"
+        },
+        {
+          "text": "weekend.",
+          "start": 20320,
+          "end": 20640,
+          "confidence": 0.9154967,
+          "speaker": "B"
+        },
+        {
+          "text": "What",
+          "start": 21520,
+          "end": 21600,
+          "confidence": 0.99292374,
+          "speaker": "B"
+        },
+        {
+          "text": "prompted",
+          "start": 21840,
+          "end": 22240,
+          "confidence": 0.9949765,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 22320,
+          "end": 22400,
+          "confidence": 0.99621636,
+          "speaker": "B"
+        },
+        {
+          "text": "to",
+          "start": 22480,
+          "end": 22560,
+          "confidence": 0.9951566,
+          "speaker": "B"
+        },
+        {
+          "text": "jump",
+          "start": 22800,
+          "end": 22960,
+          "confidence": 0.9952781,
+          "speaker": "B"
+        },
+        {
+          "text": "into",
+          "start": 23040,
+          "end": 23120,
+          "confidence": 0.9921772,
+          "speaker": "B"
+        },
+        {
+          "text": "the",
+          "start": 23280,
+          "end": 23360,
+          "confidence": 0.98787373,
+          "speaker": "B"
+        },
+        {
+          "text": "lake?",
+          "start": 23360,
+          "end": 23600,
+          "confidence": 0.97709376,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "I don't know. I think I was like, I felt done with life.",
+      "confidence": 0.86994606,
+      "start": 24160,
+      "end": 26480,
+      "words": [
+        {
+          "text": "I",
+          "start": 24160,
+          "end": 24320,
+          "confidence": 0.99533784,
+          "speaker": "A"
+        },
+        {
+          "text": "don't",
+          "start": 24320,
+          "end": 24560,
+          "confidence": 0.9916277,
+          "speaker": "A"
+        },
+        {
+          "text": "know.",
+          "start": 24560,
+          "end": 24720,
+          "confidence": 0.5155685,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 24800,
+          "end": 24880,
+          "confidence": 0.9983082,
+          "speaker": "A"
+        },
+        {
+          "text": "think",
+          "start": 24880,
+          "end": 25040,
+          "confidence": 0.9177888,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 25040,
+          "end": 25120,
+          "confidence": 0.9418612,
+          "speaker": "A"
+        },
+        {
+          "text": "was",
+          "start": 25200,
+          "end": 25280,
+          "confidence": 0.7775682,
+          "speaker": "A"
+        },
+        {
+          "text": "like,",
+          "start": 25360,
+          "end": 25440,
+          "confidence": 0.4543195,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 25600,
+          "end": 25680,
+          "confidence": 0.9953999,
+          "speaker": "A"
+        },
+        {
+          "text": "felt",
+          "start": 25760,
+          "end": 25840,
+          "confidence": 0.91925055,
+          "speaker": "A"
+        },
+        {
+          "text": "done",
+          "start": 26000,
+          "end": 26080,
+          "confidence": 0.9915405,
+          "speaker": "A"
+        },
+        {
+          "text": "with",
+          "start": 26240,
+          "end": 26320,
+          "confidence": 0.9952631,
+          "speaker": "A"
+        },
+        {
+          "text": "life.",
+          "start": 26400,
+          "end": 26480,
+          "confidence": 0.81546444,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Oh, was it more of self-harm?",
+      "confidence": 0.78510934,
+      "start": 27130,
+      "end": 30570,
+      "words": [
+        {
+          "text": "Oh,",
+          "start": 27130,
+          "end": 27210,
+          "confidence": 0.4380653,
+          "speaker": "B"
+        },
+        {
+          "text": "was",
+          "start": 27850,
+          "end": 27930,
+          "confidence": 0.9879077,
+          "speaker": "B"
+        },
+        {
+          "text": "it",
+          "start": 28250,
+          "end": 28330,
+          "confidence": 0.9969989,
+          "speaker": "B"
+        },
+        {
+          "text": "more",
+          "start": 28570,
+          "end": 28650,
+          "confidence": 0.9922117,
+          "speaker": "B"
+        },
+        {
+          "text": "of",
+          "start": 28810,
+          "end": 28890,
+          "confidence": 0.7443455,
+          "speaker": "B"
+        },
+        {
+          "text": "self-harm?",
+          "start": 29850,
+          "end": 30570,
+          "confidence": 0.5511271,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "I don't really know. I think it was a mixture of like adrenaline pumping.",
+      "confidence": 0.8547995,
+      "start": 31930,
+      "end": 35610,
+      "words": [
+        {
+          "text": "I",
+          "start": 31930,
+          "end": 32010,
+          "confidence": 0.9662389,
+          "speaker": "A"
+        },
+        {
+          "text": "don't",
+          "start": 32010,
+          "end": 32330,
+          "confidence": 0.97768253,
+          "speaker": "A"
+        },
+        {
+          "text": "really",
+          "start": 32330,
+          "end": 32490,
+          "confidence": 0.9819503,
+          "speaker": "A"
+        },
+        {
+          "text": "know.",
+          "start": 32570,
+          "end": 32650,
+          "confidence": 0.68252397,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 32810,
+          "end": 32890,
+          "confidence": 0.9968178,
+          "speaker": "A"
+        },
+        {
+          "text": "think",
+          "start": 32890,
+          "end": 33050,
+          "confidence": 0.9925527,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 33050,
+          "end": 33130,
+          "confidence": 0.99530375,
+          "speaker": "A"
+        },
+        {
+          "text": "was",
+          "start": 33210,
+          "end": 33290,
+          "confidence": 0.99409026,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 33290,
+          "end": 33370,
+          "confidence": 0.9928284,
+          "speaker": "A"
+        },
+        {
+          "text": "mixture",
+          "start": 33370,
+          "end": 33690,
+          "confidence": 0.99342525,
+          "speaker": "A"
+        },
+        {
+          "text": "of",
+          "start": 33690,
+          "end": 33770,
+          "confidence": 0.9839744,
+          "speaker": "A"
+        },
+        {
+          "text": "like",
+          "start": 33850,
+          "end": 33930,
+          "confidence": 0.66026646,
+          "speaker": "A"
+        },
+        {
+          "text": "adrenaline",
+          "start": 34010,
+          "end": 34730,
+          "confidence": 0.54561996,
+          "speaker": "A"
+        },
+        {
+          "text": "pumping.",
+          "start": 35130,
+          "end": 35610,
+          "confidence": 0.20391817,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Well, I'm glad you're able to laugh about it. Was this more of a spur of a moment? Kind of like, I'm done with life. How did you get out?",
+      "confidence": 0.86095285,
+      "start": 39050,
+      "end": 48970,
+      "words": [
+        {
+          "text": "Well,",
+          "start": 39050,
+          "end": 39130,
+          "confidence": 0.394875,
+          "speaker": "B"
+        },
+        {
+          "text": "I'm",
+          "start": 39210,
+          "end": 39450,
+          "confidence": 0.9868462,
+          "speaker": "B"
+        },
+        {
+          "text": "glad",
+          "start": 39450,
+          "end": 39690,
+          "confidence": 0.9951196,
+          "speaker": "B"
+        },
+        {
+          "text": "you're",
+          "start": 39690,
+          "end": 39930,
+          "confidence": 0.54625946,
+          "speaker": "B"
+        },
+        {
+          "text": "able",
+          "start": 39930,
+          "end": 40170,
+          "confidence": 0.99650675,
+          "speaker": "B"
+        },
+        {
+          "text": "to",
+          "start": 40170,
+          "end": 40250,
+          "confidence": 0.99737155,
+          "speaker": "B"
+        },
+        {
+          "text": "laugh",
+          "start": 40250,
+          "end": 40650,
+          "confidence": 0.99784315,
+          "speaker": "B"
+        },
+        {
+          "text": "about",
+          "start": 40650,
+          "end": 40810,
+          "confidence": 0.9944824,
+          "speaker": "B"
+        },
+        {
+          "text": "it.",
+          "start": 40810,
+          "end": 40890,
+          "confidence": 0.9292455,
+          "speaker": "B"
+        },
+        {
+          "text": "Was",
+          "start": 41850,
+          "end": 42170,
+          "confidence": 0.7694437,
+          "speaker": "B"
+        },
+        {
+          "text": "this",
+          "start": 42250,
+          "end": 42330,
+          "confidence": 0.46794945,
+          "speaker": "B"
+        },
+        {
+          "text": "more",
+          "start": 42410,
+          "end": 42490,
+          "confidence": 0.9847915,
+          "speaker": "B"
+        },
+        {
+          "text": "of",
+          "start": 42570,
+          "end": 42650,
+          "confidence": 0.98974645,
+          "speaker": "B"
+        },
+        {
+          "text": "a",
+          "start": 42650,
+          "end": 42730,
+          "confidence": 0.9954774,
+          "speaker": "B"
+        },
+        {
+          "text": "spur",
+          "start": 42730,
+          "end": 43050,
+          "confidence": 0.8855435,
+          "speaker": "B"
+        },
+        {
+          "text": "of",
+          "start": 43130,
+          "end": 43210,
+          "confidence": 0.8824765,
+          "speaker": "B"
+        },
+        {
+          "text": "a",
+          "start": 43210,
+          "end": 43290,
+          "confidence": 0.72616476,
+          "speaker": "B"
+        },
+        {
+          "text": "moment?",
+          "start": 43370,
+          "end": 43610,
+          "confidence": 0.47623873,
+          "speaker": "B"
+        },
+        {
+          "text": "Kind",
+          "start": 44890,
+          "end": 45210,
+          "confidence": 0.9239358,
+          "speaker": "B"
+        },
+        {
+          "text": "of",
+          "start": 45210,
+          "end": 45290,
+          "confidence": 0.98630744,
+          "speaker": "B"
+        },
+        {
+          "text": "like,",
+          "start": 45450,
+          "end": 45530,
+          "confidence": 0.63785917,
+          "speaker": "B"
+        },
+        {
+          "text": "I'm",
+          "start": 46010,
+          "end": 46250,
+          "confidence": 0.92198676,
+          "speaker": "B"
+        },
+        {
+          "text": "done",
+          "start": 46330,
+          "end": 46410,
+          "confidence": 0.9934336,
+          "speaker": "B"
+        },
+        {
+          "text": "with",
+          "start": 46570,
+          "end": 46650,
+          "confidence": 0.9935376,
+          "speaker": "B"
+        },
+        {
+          "text": "life.",
+          "start": 46810,
+          "end": 46890,
+          "confidence": 0.82938594,
+          "speaker": "B"
+        },
+        {
+          "text": "How",
+          "start": 47930,
+          "end": 48170,
+          "confidence": 0.97087705,
+          "speaker": "B"
+        },
+        {
+          "text": "did",
+          "start": 48250,
+          "end": 48330,
+          "confidence": 0.5875742,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 48490,
+          "end": 48570,
+          "confidence": 0.997022,
+          "speaker": "B"
+        },
+        {
+          "text": "get",
+          "start": 48730,
+          "end": 48810,
+          "confidence": 0.9962302,
+          "speaker": "B"
+        },
+        {
+          "text": "out?",
+          "start": 48890,
+          "end": 48970,
+          "confidence": 0.97405386,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "How did I get out? There was a lifeguard who saved me.",
+      "confidence": 0.90692264,
+      "start": 49690,
+      "end": 52410,
+      "words": [
+        {
+          "text": "How",
+          "start": 49690,
+          "end": 49850,
+          "confidence": 0.9294512,
+          "speaker": "A"
+        },
+        {
+          "text": "did",
+          "start": 49930,
+          "end": 50010,
+          "confidence": 0.9909775,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 50090,
+          "end": 50170,
+          "confidence": 0.98555934,
+          "speaker": "A"
+        },
+        {
+          "text": "get",
+          "start": 50250,
+          "end": 50330,
+          "confidence": 0.9982297,
+          "speaker": "A"
+        },
+        {
+          "text": "out?",
+          "start": 50410,
+          "end": 50490,
+          "confidence": 0.94821626,
+          "speaker": "A"
+        },
+        {
+          "text": "There",
+          "start": 50890,
+          "end": 50970,
+          "confidence": 0.88915455,
+          "speaker": "A"
+        },
+        {
+          "text": "was",
+          "start": 51050,
+          "end": 51130,
+          "confidence": 0.8357332,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 51210,
+          "end": 51290,
+          "confidence": 0.9881644,
+          "speaker": "A"
+        },
+        {
+          "text": "lifeguard",
+          "start": 51370,
+          "end": 51850,
+          "confidence": 0.9744744,
+          "speaker": "A"
+        },
+        {
+          "text": "who",
+          "start": 51930,
+          "end": 52010,
+          "confidence": 0.9255819,
+          "speaker": "A"
+        },
+        {
+          "text": "saved",
+          "start": 52010,
+          "end": 52330,
+          "confidence": 0.97946143,
+          "speaker": "A"
+        },
+        {
+          "text": "me.",
+          "start": 52330,
+          "end": 52410,
+          "confidence": 0.43806747,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "So you were, Going to drown and.",
+      "confidence": 0.6551607,
+      "start": 53610,
+      "end": 55960,
+      "words": [
+        {
+          "text": "So",
+          "start": 53610,
+          "end": 53690,
+          "confidence": 0.4822592,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 53930,
+          "end": 54010,
+          "confidence": 0.78925574,
+          "speaker": "B"
+        },
+        {
+          "text": "were,",
+          "start": 54090,
+          "end": 54170,
+          "confidence": 0.2593592,
+          "speaker": "B"
+        },
+        {
+          "text": "Going",
+          "start": 54840,
+          "end": 55080,
+          "confidence": 0.46368185,
+          "speaker": "B"
+        },
+        {
+          "text": "to",
+          "start": 55080,
+          "end": 55240,
+          "confidence": 0.9937202,
+          "speaker": "B"
+        },
+        {
+          "text": "drown",
+          "start": 55240,
+          "end": 55640,
+          "confidence": 0.98979014,
+          "speaker": "B"
+        },
+        {
+          "text": "and.",
+          "start": 55880,
+          "end": 55960,
+          "confidence": 0.6080586,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "Then I guess I wasn't necessarily going to drown I thought that I was like oh, I'm done. I just like want some water like you know try something new I guess I didn't quite realize that I didn't know how to swim until I was in that situation and then I realized that oh, I really I could have really died from that situation I guess.",
+      "confidence": 0.89504546,
+      "start": 56040,
+      "end": 73960,
+      "words": [
+        {
+          "text": "Then",
+          "start": 56040,
+          "end": 56200,
+          "confidence": 0.9801513,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 56920,
+          "end": 57000,
+          "confidence": 0.6406628,
+          "speaker": "A"
+        },
+        {
+          "text": "guess",
+          "start": 57000,
+          "end": 57080,
+          "confidence": 0.5878052,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 57160,
+          "end": 57240,
+          "confidence": 0.92151904,
+          "speaker": "A"
+        },
+        {
+          "text": "wasn't",
+          "start": 57400,
+          "end": 57800,
+          "confidence": 0.8714322,
+          "speaker": "A"
+        },
+        {
+          "text": "necessarily",
+          "start": 57800,
+          "end": 58520,
+          "confidence": 0.9411855,
+          "speaker": "A"
+        },
+        {
+          "text": "going",
+          "start": 58520,
+          "end": 58600,
+          "confidence": 0.9847206,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 58600,
+          "end": 58680,
+          "confidence": 0.9979457,
+          "speaker": "A"
+        },
+        {
+          "text": "drown",
+          "start": 58680,
+          "end": 59000,
+          "confidence": 0.9968346,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 59160,
+          "end": 59240,
+          "confidence": 0.560696,
+          "speaker": "A"
+        },
+        {
+          "text": "thought",
+          "start": 59320,
+          "end": 59400,
+          "confidence": 0.98824316,
+          "speaker": "A"
+        },
+        {
+          "text": "that",
+          "start": 59480,
+          "end": 59560,
+          "confidence": 0.99353313,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 59640,
+          "end": 59720,
+          "confidence": 0.9160141,
+          "speaker": "A"
+        },
+        {
+          "text": "was",
+          "start": 59720,
+          "end": 59880,
+          "confidence": 0.9926764,
+          "speaker": "A"
+        },
+        {
+          "text": "like",
+          "start": 59880,
+          "end": 60040,
+          "confidence": 0.9919674,
+          "speaker": "A"
+        },
+        {
+          "text": "oh,",
+          "start": 60120,
+          "end": 60280,
+          "confidence": 0.30091727,
+          "speaker": "A"
+        },
+        {
+          "text": "I'm",
+          "start": 60360,
+          "end": 60600,
+          "confidence": 0.97362626,
+          "speaker": "A"
+        },
+        {
+          "text": "done.",
+          "start": 60600,
+          "end": 60680,
+          "confidence": 0.60626477,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 60840,
+          "end": 60920,
+          "confidence": 0.9856662,
+          "speaker": "A"
+        },
+        {
+          "text": "just",
+          "start": 60920,
+          "end": 61080,
+          "confidence": 0.9892061,
+          "speaker": "A"
+        },
+        {
+          "text": "like",
+          "start": 61080,
+          "end": 61240,
+          "confidence": 0.9498938,
+          "speaker": "A"
+        },
+        {
+          "text": "want",
+          "start": 61320,
+          "end": 61400,
+          "confidence": 0.8887494,
+          "speaker": "A"
+        },
+        {
+          "text": "some",
+          "start": 61560,
+          "end": 61640,
+          "confidence": 0.99529207,
+          "speaker": "A"
+        },
+        {
+          "text": "water",
+          "start": 61640,
+          "end": 61800,
+          "confidence": 0.9957014,
+          "speaker": "A"
+        },
+        {
+          "text": "like",
+          "start": 61960,
+          "end": 62040,
+          "confidence": 0.83336663,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 62200,
+          "end": 62280,
+          "confidence": 0.7648676,
+          "speaker": "A"
+        },
+        {
+          "text": "know",
+          "start": 62280,
+          "end": 62360,
+          "confidence": 0.9682949,
+          "speaker": "A"
+        },
+        {
+          "text": "try",
+          "start": 62520,
+          "end": 62600,
+          "confidence": 0.7048515,
+          "speaker": "A"
+        },
+        {
+          "text": "something",
+          "start": 62760,
+          "end": 62840,
+          "confidence": 0.9914773,
+          "speaker": "A"
+        },
+        {
+          "text": "new",
+          "start": 63000,
+          "end": 63080,
+          "confidence": 0.9698767,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 63400,
+          "end": 63480,
+          "confidence": 0.7484791,
+          "speaker": "A"
+        },
+        {
+          "text": "guess",
+          "start": 63560,
+          "end": 63640,
+          "confidence": 0.99093974,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 63720,
+          "end": 63800,
+          "confidence": 0.94793546,
+          "speaker": "A"
+        },
+        {
+          "text": "didn't",
+          "start": 63800,
+          "end": 64120,
+          "confidence": 0.9962653,
+          "speaker": "A"
+        },
+        {
+          "text": "quite",
+          "start": 64120,
+          "end": 64280,
+          "confidence": 0.9853526,
+          "speaker": "A"
+        },
+        {
+          "text": "realize",
+          "start": 64280,
+          "end": 64600,
+          "confidence": 0.9693978,
+          "speaker": "A"
+        },
+        {
+          "text": "that",
+          "start": 64600,
+          "end": 64680,
+          "confidence": 0.8189056,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 64680,
+          "end": 64840,
+          "confidence": 0.917792,
+          "speaker": "A"
+        },
+        {
+          "text": "didn't",
+          "start": 64840,
+          "end": 65160,
+          "confidence": 0.9648378,
+          "speaker": "A"
+        },
+        {
+          "text": "know",
+          "start": 65160,
+          "end": 65240,
+          "confidence": 0.99702305,
+          "speaker": "A"
+        },
+        {
+          "text": "how",
+          "start": 65240,
+          "end": 65320,
+          "confidence": 0.99552095,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 65320,
+          "end": 65480,
+          "confidence": 0.9980363,
+          "speaker": "A"
+        },
+        {
+          "text": "swim",
+          "start": 65480,
+          "end": 65800,
+          "confidence": 0.99494237,
+          "speaker": "A"
+        },
+        {
+          "text": "until",
+          "start": 66440,
+          "end": 66520,
+          "confidence": 0.37468934,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 66760,
+          "end": 66920,
+          "confidence": 0.99832577,
+          "speaker": "A"
+        },
+        {
+          "text": "was",
+          "start": 66920,
+          "end": 67000,
+          "confidence": 0.99673814,
+          "speaker": "A"
+        },
+        {
+          "text": "in",
+          "start": 67160,
+          "end": 67240,
+          "confidence": 0.9967535,
+          "speaker": "A"
+        },
+        {
+          "text": "that",
+          "start": 67400,
+          "end": 67480,
+          "confidence": 0.9968004,
+          "speaker": "A"
+        },
+        {
+          "text": "situation",
+          "start": 67560,
+          "end": 67640,
+          "confidence": 0.99188966,
+          "speaker": "A"
+        },
+        {
+          "text": "and",
+          "start": 68520,
+          "end": 68600,
+          "confidence": 0.8374211,
+          "speaker": "A"
+        },
+        {
+          "text": "then",
+          "start": 68760,
+          "end": 69000,
+          "confidence": 0.9370341,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 69000,
+          "end": 69080,
+          "confidence": 0.997416,
+          "speaker": "A"
+        },
+        {
+          "text": "realized",
+          "start": 69160,
+          "end": 69560,
+          "confidence": 0.97079515,
+          "speaker": "A"
+        },
+        {
+          "text": "that",
+          "start": 69560,
+          "end": 69640,
+          "confidence": 0.9732603,
+          "speaker": "A"
+        },
+        {
+          "text": "oh,",
+          "start": 69720,
+          "end": 69960,
+          "confidence": 0.49890715,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 70120,
+          "end": 70200,
+          "confidence": 0.9936859,
+          "speaker": "A"
+        },
+        {
+          "text": "really",
+          "start": 70360,
+          "end": 70440,
+          "confidence": 0.98696184,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 70760,
+          "end": 70840,
+          "confidence": 0.86611915,
+          "speaker": "A"
+        },
+        {
+          "text": "could",
+          "start": 70840,
+          "end": 70920,
+          "confidence": 0.9904946,
+          "speaker": "A"
+        },
+        {
+          "text": "have",
+          "start": 71080,
+          "end": 71160,
+          "confidence": 0.95884794,
+          "speaker": "A"
+        },
+        {
+          "text": "really",
+          "start": 71240,
+          "end": 71320,
+          "confidence": 0.9972588,
+          "speaker": "A"
+        },
+        {
+          "text": "died",
+          "start": 71560,
+          "end": 71800,
+          "confidence": 0.9950584,
+          "speaker": "A"
+        },
+        {
+          "text": "from",
+          "start": 71960,
+          "end": 72040,
+          "confidence": 0.992475,
+          "speaker": "A"
+        },
+        {
+          "text": "that",
+          "start": 72280,
+          "end": 72360,
+          "confidence": 0.99755585,
+          "speaker": "A"
+        },
+        {
+          "text": "situation",
+          "start": 72920,
+          "end": 73000,
+          "confidence": 0.5483019,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 73720,
+          "end": 73800,
+          "confidence": 0.4810455,
+          "speaker": "A"
+        },
+        {
+          "text": "guess.",
+          "start": 73880,
+          "end": 73960,
+          "confidence": 0.9813425,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "The important thing now is are you gonna do that again? Or do you think this is a pattern?",
+      "confidence": 0.90802616,
+      "start": 74120,
+      "end": 78680,
+      "words": [
+        {
+          "text": "The",
+          "start": 74120,
+          "end": 74200,
+          "confidence": 0.9751568,
+          "speaker": "B"
+        },
+        {
+          "text": "important",
+          "start": 74360,
+          "end": 74440,
+          "confidence": 0.9930426,
+          "speaker": "B"
+        },
+        {
+          "text": "thing",
+          "start": 74760,
+          "end": 74840,
+          "confidence": 0.99674356,
+          "speaker": "B"
+        },
+        {
+          "text": "now",
+          "start": 75000,
+          "end": 75080,
+          "confidence": 0.99054354,
+          "speaker": "B"
+        },
+        {
+          "text": "is",
+          "start": 75240,
+          "end": 75320,
+          "confidence": 0.8709039,
+          "speaker": "B"
+        },
+        {
+          "text": "are",
+          "start": 75560,
+          "end": 75640,
+          "confidence": 0.7619067,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 75800,
+          "end": 75880,
+          "confidence": 0.64783037,
+          "speaker": "B"
+        },
+        {
+          "text": "gonna",
+          "start": 75960,
+          "end": 76040,
+          "confidence": 0.6837345,
+          "speaker": "B"
+        },
+        {
+          "text": "do",
+          "start": 76200,
+          "end": 76280,
+          "confidence": 0.9931312,
+          "speaker": "B"
+        },
+        {
+          "text": "that",
+          "start": 76360,
+          "end": 76440,
+          "confidence": 0.9974946,
+          "speaker": "B"
+        },
+        {
+          "text": "again?",
+          "start": 76600,
+          "end": 76680,
+          "confidence": 0.5169313,
+          "speaker": "B"
+        },
+        {
+          "text": "Or",
+          "start": 77080,
+          "end": 77240,
+          "confidence": 0.9552441,
+          "speaker": "B"
+        },
+        {
+          "text": "do",
+          "start": 77400,
+          "end": 77480,
+          "confidence": 0.9922834,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 77480,
+          "end": 77640,
+          "confidence": 0.99829143,
+          "speaker": "B"
+        },
+        {
+          "text": "think",
+          "start": 77640,
+          "end": 77720,
+          "confidence": 0.9953551,
+          "speaker": "B"
+        },
+        {
+          "text": "this",
+          "start": 77800,
+          "end": 77880,
+          "confidence": 0.99615675,
+          "speaker": "B"
+        },
+        {
+          "text": "is",
+          "start": 77960,
+          "end": 78040,
+          "confidence": 0.9960812,
+          "speaker": "B"
+        },
+        {
+          "text": "a",
+          "start": 78120,
+          "end": 78200,
+          "confidence": 0.9972036,
+          "speaker": "B"
+        },
+        {
+          "text": "pattern?",
+          "start": 78200,
+          "end": 78680,
+          "confidence": 0.8944621,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "I don't know. I feel like it is a pattern that I tend to do things and not really really and realize the consequences of them until they happen.",
+      "confidence": 0.9239256,
+      "start": 79400,
+      "end": 86580,
+      "words": [
+        {
+          "text": "I",
+          "start": 79400,
+          "end": 79560,
+          "confidence": 0.9859076,
+          "speaker": "A"
+        },
+        {
+          "text": "don't",
+          "start": 79560,
+          "end": 79800,
+          "confidence": 0.80868274,
+          "speaker": "A"
+        },
+        {
+          "text": "know.",
+          "start": 79800,
+          "end": 79960,
+          "confidence": 0.5683575,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 80120,
+          "end": 80200,
+          "confidence": 0.99941206,
+          "speaker": "A"
+        },
+        {
+          "text": "feel",
+          "start": 80200,
+          "end": 80280,
+          "confidence": 0.99712026,
+          "speaker": "A"
+        },
+        {
+          "text": "like",
+          "start": 80360,
+          "end": 80440,
+          "confidence": 0.99325764,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 80520,
+          "end": 80600,
+          "confidence": 0.99553704,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 80600,
+          "end": 80760,
+          "confidence": 0.9641697,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 80760,
+          "end": 80840,
+          "confidence": 0.99078476,
+          "speaker": "A"
+        },
+        {
+          "text": "pattern",
+          "start": 80840,
+          "end": 81320,
+          "confidence": 0.99737024,
+          "speaker": "A"
+        },
+        {
+          "text": "that",
+          "start": 81320,
+          "end": 81400,
+          "confidence": 0.9885084,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 81480,
+          "end": 81560,
+          "confidence": 0.9954808,
+          "speaker": "A"
+        },
+        {
+          "text": "tend",
+          "start": 81560,
+          "end": 81800,
+          "confidence": 0.99566025,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 81800,
+          "end": 81960,
+          "confidence": 0.99829215,
+          "speaker": "A"
+        },
+        {
+          "text": "do",
+          "start": 81960,
+          "end": 82040,
+          "confidence": 0.9979054,
+          "speaker": "A"
+        },
+        {
+          "text": "things",
+          "start": 82120,
+          "end": 82200,
+          "confidence": 0.9963715,
+          "speaker": "A"
+        },
+        {
+          "text": "and",
+          "start": 83160,
+          "end": 83240,
+          "confidence": 0.8802255,
+          "speaker": "A"
+        },
+        {
+          "text": "not",
+          "start": 83480,
+          "end": 83560,
+          "confidence": 0.9978787,
+          "speaker": "A"
+        },
+        {
+          "text": "really",
+          "start": 83720,
+          "end": 83800,
+          "confidence": 0.9977254,
+          "speaker": "A"
+        },
+        {
+          "text": "really",
+          "start": 83880,
+          "end": 83960,
+          "confidence": 0.41470978,
+          "speaker": "A"
+        },
+        {
+          "text": "and",
+          "start": 84260,
+          "end": 84340,
+          "confidence": 0.7832786,
+          "speaker": "A"
+        },
+        {
+          "text": "realize",
+          "start": 84660,
+          "end": 84900,
+          "confidence": 0.7089012,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 84980,
+          "end": 85060,
+          "confidence": 0.99490696,
+          "speaker": "A"
+        },
+        {
+          "text": "consequences",
+          "start": 85060,
+          "end": 85700,
+          "confidence": 0.99038565,
+          "speaker": "A"
+        },
+        {
+          "text": "of",
+          "start": 85780,
+          "end": 85860,
+          "confidence": 0.9962334,
+          "speaker": "A"
+        },
+        {
+          "text": "them",
+          "start": 85860,
+          "end": 85940,
+          "confidence": 0.9881175,
+          "speaker": "A"
+        },
+        {
+          "text": "until",
+          "start": 86100,
+          "end": 86180,
+          "confidence": 0.9550713,
+          "speaker": "A"
+        },
+        {
+          "text": "they",
+          "start": 86340,
+          "end": 86420,
+          "confidence": 0.9931293,
+          "speaker": "A"
+        },
+        {
+          "text": "happen.",
+          "start": 86500,
+          "end": 86580,
+          "confidence": 0.8204611,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Is this more of an impulsivity or more of a deep desire to die? Well, that's all I have time for today. Hopefully this LLM agent will help you not do that again. Goodbye.",
+      "confidence": 0.9272143,
+      "start": 87540,
+      "end": 104340,
+      "words": [
+        {
+          "text": "Is",
+          "start": 87540,
+          "end": 87780,
+          "confidence": 0.7981255,
+          "speaker": "B"
+        },
+        {
+          "text": "this",
+          "start": 87780,
+          "end": 87940,
+          "confidence": 0.9252127,
+          "speaker": "B"
+        },
+        {
+          "text": "more",
+          "start": 87940,
+          "end": 88100,
+          "confidence": 0.9917407,
+          "speaker": "B"
+        },
+        {
+          "text": "of",
+          "start": 88100,
+          "end": 88180,
+          "confidence": 0.97923297,
+          "speaker": "B"
+        },
+        {
+          "text": "an",
+          "start": 88180,
+          "end": 88260,
+          "confidence": 0.8303733,
+          "speaker": "B"
+        },
+        {
+          "text": "impulsivity",
+          "start": 88260,
+          "end": 88900,
+          "confidence": 0.95991075,
+          "speaker": "B"
+        },
+        {
+          "text": "or",
+          "start": 88980,
+          "end": 89140,
+          "confidence": 0.86077994,
+          "speaker": "B"
+        },
+        {
+          "text": "more",
+          "start": 89220,
+          "end": 89300,
+          "confidence": 0.96557105,
+          "speaker": "B"
+        },
+        {
+          "text": "of",
+          "start": 89380,
+          "end": 89460,
+          "confidence": 0.9797243,
+          "speaker": "B"
+        },
+        {
+          "text": "a",
+          "start": 89620,
+          "end": 89700,
+          "confidence": 0.73087573,
+          "speaker": "B"
+        },
+        {
+          "text": "deep",
+          "start": 90100,
+          "end": 90260,
+          "confidence": 0.6535945,
+          "speaker": "B"
+        },
+        {
+          "text": "desire",
+          "start": 90500,
+          "end": 90900,
+          "confidence": 0.9622509,
+          "speaker": "B"
+        },
+        {
+          "text": "to",
+          "start": 90900,
+          "end": 91060,
+          "confidence": 0.98022264,
+          "speaker": "B"
+        },
+        {
+          "text": "die?",
+          "start": 91620,
+          "end": 92020,
+          "confidence": 0.94168276,
+          "speaker": "B"
+        },
+        {
+          "text": "Well,",
+          "start": 94420,
+          "end": 94500,
+          "confidence": 0.77392155,
+          "speaker": "B"
+        },
+        {
+          "text": "that's",
+          "start": 94820,
+          "end": 95060,
+          "confidence": 0.9852738,
+          "speaker": "B"
+        },
+        {
+          "text": "all",
+          "start": 95140,
+          "end": 95220,
+          "confidence": 0.9944976,
+          "speaker": "B"
+        },
+        {
+          "text": "I",
+          "start": 95300,
+          "end": 95380,
+          "confidence": 0.99067956,
+          "speaker": "B"
+        },
+        {
+          "text": "have",
+          "start": 95460,
+          "end": 95540,
+          "confidence": 0.99189305,
+          "speaker": "B"
+        },
+        {
+          "text": "time",
+          "start": 95620,
+          "end": 95700,
+          "confidence": 0.99236864,
+          "speaker": "B"
+        },
+        {
+          "text": "for",
+          "start": 95860,
+          "end": 95940,
+          "confidence": 0.99417216,
+          "speaker": "B"
+        },
+        {
+          "text": "today.",
+          "start": 96100,
+          "end": 96180,
+          "confidence": 0.9694904,
+          "speaker": "B"
+        },
+        {
+          "text": "Hopefully",
+          "start": 98260,
+          "end": 98740,
+          "confidence": 0.9726309,
+          "speaker": "B"
+        },
+        {
+          "text": "this",
+          "start": 98820,
+          "end": 98900,
+          "confidence": 0.81281817,
+          "speaker": "B"
+        },
+        {
+          "text": "LLM",
+          "start": 98980,
+          "end": 99540,
+          "confidence": 0.82119274,
+          "speaker": "B"
+        },
+        {
+          "text": "agent",
+          "start": 99620,
+          "end": 99940,
+          "confidence": 0.97885716,
+          "speaker": "B"
+        },
+        {
+          "text": "will",
+          "start": 100020,
+          "end": 100100,
+          "confidence": 0.99414766,
+          "speaker": "B"
+        },
+        {
+          "text": "help",
+          "start": 101060,
+          "end": 101140,
+          "confidence": 0.9905253,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 101460,
+          "end": 101540,
+          "confidence": 0.99311817,
+          "speaker": "B"
+        },
+        {
+          "text": "not",
+          "start": 102180,
+          "end": 102260,
+          "confidence": 0.9319226,
+          "speaker": "B"
+        },
+        {
+          "text": "do",
+          "start": 102660,
+          "end": 102740,
+          "confidence": 0.91869664,
+          "speaker": "B"
+        },
+        {
+          "text": "that",
+          "start": 102820,
+          "end": 102900,
+          "confidence": 0.99218106,
+          "speaker": "B"
+        },
+        {
+          "text": "again.",
+          "start": 103060,
+          "end": 103140,
+          "confidence": 0.9416355,
+          "speaker": "B"
+        },
+        {
+          "text": "Goodbye.",
+          "start": 103540,
+          "end": 104340,
+          "confidence": 0.92596686,
+          "speaker": "B"
+        }
+      ]
+    }
+  ],
+  "confidence": 0.90001845,
+  "audio_duration": 107,
+  "punctuate": true,
+  "format_text": true,
+  "dual_channel": false,
+  "webhook_url": null,
+  "webhook_status_code": null,
+  "webhook_auth": false,
+  "webhook_auth_header_name": null,
+  "speed_boost": false,
+  "auto_highlights_result": null,
+  "auto_highlights": false,
+  "audio_start_from": null,
+  "audio_end_at": null,
+  "word_boost": [],
+  "boost_param": null,
+  "prompt": null,
+  "keyterms_prompt": [],
+  "filter_profanity": false,
+  "redact_pii": false,
+  "redact_pii_audio": false,
+  "redact_pii_audio_quality": null,
+  "redact_pii_policies": null,
+  "redact_pii_sub": null,
+  "speaker_labels": true,
+  "content_safety": true,
+  "iab_categories": true,
+  "content_safety_labels": {
+    "status": "success",
+    "results": [],
+    "summary": {},
+    "severity_score_summary": {}
+  },
+  "iab_categories_result": {
+    "status": "success",
+    "results": [
+      {
+        "text": "Hi Dimple, welcome in today. What brings you in? What brings me in is over the weekend I jumped into a lake. I don't know how to swim and I don't know why I was delusional enough to jump into a lake. I don't know what's wrong with me or is anything even wrong with me? Well, seems like a fun thing to do on a weekend. What prompted you to jump into the lake? I don't know.",
+        "labels": [
+          {
+            "relevance": 0.22526139,
+            "label": "Sports>Diving"
+          },
+          {
+            "relevance": 0.16841027,
+            "label": "Sports>Swimming"
+          },
+          {
+            "relevance": 0.031037409,
+            "label": "Sports>ExtremeSports>ScubaDiving"
+          },
+          {
+            "relevance": 0.0048995386,
+            "label": "Sports>ExtremeSports>SurfingAndBodyboarding"
+          },
+          {
+            "relevance": 0.002437376,
+            "label": "Travel>TravelType>Spas"
+          },
+          {
+            "relevance": 0.0022820355,
+            "label": "Sports>ExtremeSports>WaterskiingAndWakeboarding"
+          },
+          {
+            "relevance": 0.000999236,
+            "label": "EventsAndAttractions>OutdoorActivities"
+          },
+          {
+            "relevance": 0.0006316226,
+            "label": "Sports>ExtremeSports>CanoeingAndKayaking"
+          },
+          {
+            "relevance": 0.00040698124,
+            "label": "Pets>FishAndAquariums"
+          },
+          {
+            "relevance": 0.0003635944,
+            "label": "Sports>Sailing"
+          }
+        ],
+        "timestamp": {
+          "end": 24720,
+          "start": 0
+        },
+        "sentences_idx_end": 7,
+        "sentences_idx_start": 0
+      },
+      {
+        "text": "I think I was like, I felt done with life. Oh, was it more of self-harm? I don't really know. I think it was a mixture of like adrenaline pumping. Well, I'm glad you're able to laugh about it. Was this more of a spur of a moment? Kind of like, I'm done with life. How did you get out? How did I get out? There was a lifeguard who saved me.",
+        "labels": [
+          {
+            "relevance": 0.3773549,
+            "label": "Sports>ExtremeSports>ScubaDiving"
+          },
+          {
+            "relevance": 0.28744054,
+            "label": "MedicalHealth>DiseasesAndConditions>Injuries"
+          },
+          {
+            "relevance": 0.24654184,
+            "label": "Sports>Diving"
+          },
+          {
+            "relevance": 0.031573065,
+            "label": "MedicalHealth>DiseasesAndConditions>Injuries>FirstAid"
+          },
+          {
+            "relevance": 0.0018998999,
+            "label": "Sports>Swimming"
+          },
+          {
+            "relevance": 0.0011032657,
+            "label": "Sports>ExtremeSports>SurfingAndBodyboarding"
+          },
+          {
+            "relevance": 0.0009381656,
+            "label": "NewsAndPolitics>Disasters"
+          },
+          {
+            "relevance": 0.0009327839,
+            "label": "MedicalHealth>DiseasesAndConditions>MentalHealth"
+          },
+          {
+            "relevance": 0.00072225556,
+            "label": "HealthyLiving>Men'sHealth"
+          },
+          {
+            "relevance": 0.00069527025,
+            "label": "MedicalHealth>DiseasesAndConditions>BrainAndNervousSystemDisorders"
+          }
+        ],
+        "timestamp": {
+          "start": 24800,
+          "end": 52410
+        },
+        "sentences_idx_start": 8,
+        "sentences_idx_end": 17
+      },
+      {
+        "text": "So you were, Going to drown and then I guess I wasn't necessarily going to drown I thought that I was like oh, I'm done. I just like want some water like you know try something new I guess I didn't quite realize that I didn't know how to swim until I was in that situation and then I realized that oh, I really I could have really died from that situation I guess the important thing now is are you gonna do that again?",
+        "labels": [
+          {
+            "relevance": 0.875555,
+            "label": "Sports>Swimming"
+          },
+          {
+            "relevance": 0.8588158,
+            "label": "Sports>Diving"
+          },
+          {
+            "relevance": 0.5822628,
+            "label": "Sports>ExtremeSports>ScubaDiving"
+          },
+          {
+            "relevance": 0.00535676,
+            "label": "Sports>ExtremeSports>SurfingAndBodyboarding"
+          },
+          {
+            "relevance": 0.0025938572,
+            "label": "MedicalHealth>DiseasesAndConditions>Injuries>FirstAid"
+          },
+          {
+            "relevance": 0.0025277738,
+            "label": "Sports>ExtremeSports>WaterskiingAndWakeboarding"
+          },
+          {
+            "relevance": 0.00089621055,
+            "label": "MedicalHealth>DiseasesAndConditions>Injuries"
+          },
+          {
+            "relevance": 0.0008776581,
+            "label": "Sports>WaterPolo"
+          },
+          {
+            "relevance": 0.0003806415,
+            "label": "HealthyLiving>FitnessAndExercise"
+          },
+          {
+            "relevance": 0.0003268166,
+            "label": "MedicalHealth>DiseasesAndConditions>InfectiousDiseases"
+          }
+        ],
+        "timestamp": {
+          "start": 53610,
+          "end": 76680
+        },
+        "sentences_idx_start": 18,
+        "sentences_idx_end": 19
+      },
+      {
+        "text": "Or do you think this is a pattern? I don't know. I feel like it is a pattern that I tend to do things and not really really and realize the consequences of them until they happen. Is this more of an impulsivity or more of a deep desire to die? Well, that's all I have time for today. Hopefully this LLM agent will help you not do that again. Goodbye.",
+        "labels": [
+          {
+            "relevance": 0.7884562,
+            "label": "FamilyAndRelationships>Bereavement"
+          },
+          {
+            "relevance": 0.02293498,
+            "label": "HealthyLiving>Men'sHealth"
+          },
+          {
+            "relevance": 0.003724427,
+            "label": "MedicalHealth>DiseasesAndConditions>MentalHealth"
+          },
+          {
+            "relevance": 0.00075995695,
+            "label": "FamilyAndRelationships>SingleLife"
+          },
+          {
+            "relevance": 0.0005932268,
+            "label": "NewsAndPolitics>Politics>WarAndConflicts"
+          },
+          {
+            "relevance": 0.00055480585,
+            "label": "Sports>ExtremeSports>CanoeingAndKayaking"
+          },
+          {
+            "relevance": 0.00035326963,
+            "label": "EventsAndAttractions>PersonalCelebrations&LifeEvents>Funeral"
+          },
+          {
+            "relevance": 0.0002871816,
+            "label": "PopCulture>CelebrityDeaths"
+          },
+          {
+            "relevance": 0.00025529298,
+            "label": "PersonalFinance>PersonalInvesting>StocksAndBonds"
+          },
+          {
+            "relevance": 0.0002409657,
+            "label": "VideoGaming>VideoGameGenres>StrategyVideoGames"
+          }
+        ],
+        "timestamp": {
+          "start": 77080,
+          "end": 104340
+        },
+        "sentences_idx_start": 20,
+        "sentences_idx_end": 26
+      }
+    ],
+    "summary": {
+      "Travel>TravelType>Spas": 0.0023140602,
+      "Sports>Diving": 1.0,
+      "MedicalHealth>DiseasesAndConditions>Injuries>FirstAid": 0.025765598,
+      "Sports>ExtremeSports>CanoeingAndKayaking": 0.0014474363,
+      "EventsAndAttractions>OutdoorActivities": 0.00115243,
+      "MedicalHealth>DiseasesAndConditions>Injuries": 0.21689872,
+      "EventsAndAttractions>AmusementAndThemeParks": 0.00071566965,
+      "Sports>ExtremeSports>WaterskiingAndWakeboarding": 0.0037281197,
+      "Sports>ExtremeSports>ScubaDiving": 0.7445087,
+      "HealthyLiving>Men'sHealth": 0.017961858,
+      "Sports>Swimming": 0.78597987,
+      "NewsAndPolitics>Disasters": 0.0008680811,
+      "MedicalHealth>DiseasesAndConditions>MentalHealth": 0.0035678905,
+      "Sports>WaterPolo": 0.00081141613,
+      "MedicalHealth>DiseasesAndConditions": 0.0006848278,
+      "MedicalHealth>DiseasesAndConditions>BrainAndNervousSystemDisorders": 0.0006735845,
+      "Travel>TravelType>BeachTravel": 0.0008372927,
+      "FamilyAndRelationships>SingleLife": 0.0006238977,
+      "Sports>ExtremeSports>SurfingAndBodyboarding": 0.008544124,
+      "FamilyAndRelationships>Bereavement": 0.5930217
+    }
+  },
+  "language_detection": false,
+  "language_confidence_threshold": null,
+  "language_confidence": null,
+  "custom_spelling": null,
+  "throttled": false,
+  "auto_chapters": false,
+  "summarization": true,
+  "summary_type": "bullets",
+  "summary_model": "informative",
+  "custom_topics": false,
+  "topics": [],
+  "speech_threshold": null,
+  "speech_model": "slam-1",
+  "chapters": null,
+  "disfluencies": false,
+  "entity_detection": false,
+  "sentiment_analysis": true,
+  "sentiment_analysis_results": [
+    {
+      "sentiment": "POSITIVE",
+      "speaker": "B",
+      "text": "Hi Dimple, welcome in today.",
+      "end": 2720,
+      "confidence": 0.83734226,
+      "start": null
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "B",
+      "text": "What brings you in?",
+      "start": 3920,
+      "end": 4880,
+      "confidence": 0.82153076
+    },
+    {
+      "sentiment": "POSITIVE",
+      "speaker": "A",
+      "text": "What brings me in is over the weekend I jumped into a lake.",
+      "start": 5200,
+      "end": 8240,
+      "confidence": 0.722071
+    },
+    {
+      "sentiment": "NEGATIVE",
+      "speaker": "A",
+      "text": "I don't know how to swim and I don't know why I was delusional enough to jump into a lake.",
+      "start": 8880,
+      "end": 12560,
+      "confidence": 0.9535207
+    },
+    {
+      "sentiment": "NEGATIVE",
+      "speaker": "A",
+      "text": "I don't know what's wrong with me or is anything even wrong with me?",
+      "start": 12800,
+      "end": 15680,
+      "confidence": 0.9512749
+    },
+    {
+      "sentiment": "POSITIVE",
+      "speaker": "B",
+      "text": "Well, seems like a fun thing to do on a weekend.",
+      "start": 18080,
+      "end": 20640,
+      "confidence": 0.95088977
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "B",
+      "text": "What prompted you to jump into the lake?",
+      "start": 21520,
+      "end": 23600,
+      "confidence": 0.8694857
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "A",
+      "text": "I don't know.",
+      "start": 24160,
+      "end": 24720,
+      "confidence": 0.56667334
+    },
+    {
+      "sentiment": "NEGATIVE",
+      "speaker": "A",
+      "text": "I think I was like, I felt done with life.",
+      "start": 24800,
+      "end": 26480,
+      "confidence": 0.6705929
+    },
+    {
+      "sentiment": "NEGATIVE",
+      "speaker": "B",
+      "text": "Oh, was it more of self-harm?",
+      "start": 27130,
+      "end": 30570,
+      "confidence": 0.5769744
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "A",
+      "text": "I don't really know.",
+      "start": 31930,
+      "end": 32650,
+      "confidence": 0.64969146
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "A",
+      "text": "I think it was a mixture of like adrenaline pumping.",
+      "start": 32810,
+      "end": 35610,
+      "confidence": 0.82124573
+    },
+    {
+      "sentiment": "POSITIVE",
+      "speaker": "B",
+      "text": "Well, I'm glad you're able to laugh about it.",
+      "start": 39050,
+      "end": 40890,
+      "confidence": 0.9121555
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "B",
+      "text": "Was this more of a spur of a moment?",
+      "start": 41850,
+      "end": 43610,
+      "confidence": 0.8997944
+    },
+    {
+      "sentiment": "NEGATIVE",
+      "speaker": "B",
+      "text": "Kind of like, I'm done with life.",
+      "start": 44890,
+      "end": 46890,
+      "confidence": 0.69506866
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "B",
+      "text": "How did you get out?",
+      "start": 47930,
+      "end": 48970,
+      "confidence": 0.8013392
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "A",
+      "text": "How did I get out?",
+      "start": 49690,
+      "end": 50490,
+      "confidence": 0.7230832
+    },
+    {
+      "sentiment": "POSITIVE",
+      "speaker": "A",
+      "text": "There was a lifeguard who saved me.",
+      "start": 50890,
+      "end": 52410,
+      "confidence": 0.73289555
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "A",
+      "text": "So you were, Going to drown and then I guess I wasn't necessarily going to drown I thought that I was like oh, I'm done.",
+      "start": 53610,
+      "end": 60680,
+      "confidence": 0.60147196
+    },
+    {
+      "sentiment": "NEGATIVE",
+      "speaker": "A",
+      "text": "I just like want some water like you know try something new I guess I didn't quite realize that I didn't know how to swim until I was in that situation and then I realized that oh, I really I could have really died from that situation I guess the important thing now is are you gonna do that again?",
+      "start": 60840,
+      "end": 76680,
+      "confidence": 0.626802
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "B",
+      "text": "Or do you think this is a pattern?",
+      "start": 77080,
+      "end": 78680,
+      "confidence": 0.7781779
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "A",
+      "text": "I don't know.",
+      "start": 79400,
+      "end": 79960,
+      "confidence": 0.56667334
+    },
+    {
+      "sentiment": "NEGATIVE",
+      "speaker": "A",
+      "text": "I feel like it is a pattern that I tend to do things and not really really and realize the consequences of them until they happen.",
+      "start": 80120,
+      "end": 86580,
+      "confidence": 0.76450014
+    },
+    {
+      "sentiment": "NEGATIVE",
+      "speaker": "B",
+      "text": "Is this more of an impulsivity or more of a deep desire to die?",
+      "start": 87540,
+      "end": 92020,
+      "confidence": 0.74165595
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "B",
+      "text": "Well, that's all I have time for today.",
+      "start": 94420,
+      "end": 96180,
+      "confidence": 0.6849841
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "B",
+      "text": "Hopefully this LLM agent will help you not do that again.",
+      "start": 98260,
+      "end": 103140,
+      "confidence": 0.5936426
+    },
+    {
+      "sentiment": "NEUTRAL",
+      "speaker": "B",
+      "text": "Goodbye.",
+      "start": 103540,
+      "end": 104340,
+      "confidence": 0.56209517
+    }
+  ],
+  "entities": null,
+  "speakers_expected": null,
+  "summary": "- Over the weekend I jumped into a lake. What prompted you to jump into the lake? I think I was like, I felt done with life. The important thing now is are you gonna do that again? Is this more of an impulsivity or more of a deep desire to die?",
+  "custom_topics_results": null,
+  "is_deleted": null,
+  "multichannel": null,
+  "project_id": 556500,
+  "token_id": 558685
+}

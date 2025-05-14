@@ -24,3 +24,7 @@ openai-whisper>=20231117
 sentencepiece>=0.2.0
 protobuf>=4.25.3
 soundfile>=0.12.1
+langgraph
+langgraph.graph
+langsmith
+numpy<1.26.0,>=1.18.5
