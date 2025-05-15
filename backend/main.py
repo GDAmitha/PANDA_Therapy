@@ -1,13 +1,14 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi import UploadFile, File
-from audio_pipeline import process_audio_session
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 from rag_agent import TherapyRAGAgent
+from audio_processor import AudioProcessor
 import shutil, tempfile
 import logging
 import traceback
+import json
+import os
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -24,12 +25,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize the RAG agent
+# Initialize the RAG agent and audio processor
 try:
     agent = TherapyRAGAgent()
-    logger.info("RAG agent initialized successfully")
+    audio_processor = AudioProcessor()
+    logger.info("RAG agent and audio processor initialized successfully")
 except Exception as e:
-    logger.error(f"Failed to initialize RAG agent: {str(e)}\n{traceback.format_exc()}")
+    logger.error(f"Failed to initialize components: {str(e)}\n{traceback.format_exc()}")
     raise
 
 class ChatRequest(BaseModel):
@@ -67,27 +69,60 @@ async def load_documents(directory: str = "therapy_documents"):
         logger.error(error_detail)
         raise HTTPException(status_code=500, detail=error_detail)
 
-# Temporarily commenting out audio processing endpoint
-# @app.post("/upload-audio")
-# async def upload_audio(file: UploadFile = File(...)):
-#     try:
-#         # 1) save to a temporary file
-#         suffix = ".wav" if file.filename.endswith(".wav") else ".mp3"
-#         with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
-#             shutil.copyfileobj(file.file, tmp)
-#             tmp_path = tmp.name
-#
-#         # 2) process into RAG json with detailed segments
-#         rag_json = process_audio_session(tmp_path)
-#
-#         # 3) add each segment to the vector store
-#         for seg in rag_json["segments"]:
-#             agent.add_chunk(seg)
-#
-#         return {"status": "ingested", "session_id": rag_json["session_id"]}
-#     except Exception as e:
-#         logger.exception("Audio ingestion failed")
-#         raise HTTPException(status_code=500, detail=str(e))
+@app.post("/upload-audio")
+async def upload_audio(file: UploadFile = File(...), therapist_name: str = Form("Therapist"), patient_name: str = Form("Patient")):
+    try:
+        logger.info(f"Processing audio file: {file.filename}")
+        
+        # 1) Save to a temporary file
+        suffix = ".wav" if file.filename.endswith(".wav") else ".mp3"
+        with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
+            shutil.copyfileobj(file.file, tmp)
+            tmp_path = tmp.name
+        
+        logger.info(f"Saved audio to temporary file: {tmp_path}")
+        
+        # 2) Process audio file through the pipeline
+        result = audio_processor.process_audio_session(
+            tmp_path, 
+            therapist_name=therapist_name,
+            patient_name=patient_name
+        )
+        
+        if not result.get("success", False):
+            raise Exception(result.get("error", "Unknown processing error"))
+        
+        # 3) Add processed chunks to the RAG system
+        chunks = result.get("chunks", [])
+        agent.add_audio_session(chunks)
+        
+        return {
+            "status": "success", 
+            "session_id": result.get("session_id"),
+            "segments_processed": len(chunks)
+        }
+    except Exception as e:
+        error_detail = f"Audio processing failed: {str(e)}\n{traceback.format_exc()}"
+        logger.error(error_detail)
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/load-audio-json")
+async def load_audio_json(file_path: str):
+    try:
+        logger.info(f"Loading audio JSON data from: {file_path}")
+        
+        # Validate the file path
+        if not os.path.exists(file_path):
+            raise ValueError(f"File does not exist: {file_path}")
+        
+        # Load into RAG system
+        agent.load_audio_data(file_path)
+        
+        return {"status": "success", "message": f"Successfully loaded audio data from {file_path}"}
+    except Exception as e:
+        error_detail = f"Failed to load audio JSON: {str(e)}\n{traceback.format_exc()}"
+        logger.error(error_detail)
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     import uvicorn
@@ -96,8 +131,18 @@ if __name__ == "__main__":
         logger.info("Loading documents on startup...")
         agent.load_documents("therapy_documents")
         logger.info("Initial document loading successful")
+        
+        # Check for existing audio emotion files to load
+        audio_emo_dir = "backend/Audio/audio_emo_transcript"
+        if os.path.exists(audio_emo_dir):
+            for filename in os.listdir(audio_emo_dir):
+                if filename.endswith(".json"):
+                    file_path = os.path.join(audio_emo_dir, filename)
+                    logger.info(f"Loading existing audio emotion file: {file_path}")
+                    agent.load_audio_data(file_path)
     except Exception as e:
-        logger.error(f"Failed to load documents on startup: {str(e)}\n{traceback.format_exc()}")
-        raise
+        logger.error(f"Failed to load initial data on startup: {str(e)}\n{traceback.format_exc()}")
+        # Continue running even if initial loading fails
+        pass
 
     uvicorn.run(app, host="0.0.0.0", port=8000, log_level="debug") 
