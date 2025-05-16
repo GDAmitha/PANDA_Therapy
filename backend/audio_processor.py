@@ -36,6 +36,85 @@ class AudioProcessor:
         for directory in [self.storage_dir, self.transcription_dir, 
                           self.speaker_assign_dir, self.emotion_analysis_dir]:
             os.makedirs(directory, exist_ok=True)
+            
+    def process_and_vectorize(self, audio_file_path: str, client_name: str, therapist_name: str = "Therapist"):
+        """
+        Process an audio file and automatically vectorize it for the client
+        
+        Args:
+            audio_file_path: Path to the audio file
+            client_name: Name of the client (used for transcript retrieval)
+            therapist_name: Name of the therapist (default: "Therapist")
+            
+        Returns:
+            Success status
+        """
+        # First process the audio file
+        output_path = self.process_audio(audio_file_path, client_name, therapist_name)
+        if not output_path:
+            return False
+            
+        # Then add to database and vectorize
+        return self.add_to_database_and_vectorize(output_path, client_name)
+        
+    def add_to_database_and_vectorize(self, transcript_path: str, client_name: str) -> bool:
+        """
+        Add a processed transcript to the database and vectorize it for the client
+        
+        Args:
+            transcript_path: Path to the processed transcript JSON
+            client_name: Name of the client
+            
+        Returns:
+            Success status
+        """
+        try:
+            from transcript_memory import TherapyTranscriptMemory
+            import json
+            import os
+            
+            # Load the transcript
+            with open(transcript_path, 'r') as f:
+                transcript_data = json.load(f)
+                
+            # Get database path
+            db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "database", "transcripts.json")
+            
+            # Load existing database
+            if os.path.exists(db_path):
+                with open(db_path, 'r') as f:
+                    try:
+                        db = json.load(f)
+                    except json.JSONDecodeError:
+                        db = {}
+            else:
+                db = {}
+                
+            # Generate a new session ID
+            session_id = str(max([int(k) for k in db.keys() if k.isdigit()] + [0]) + 1)
+            
+            # Add the transcript to the database
+            db[session_id] = transcript_data
+            
+            # Save the updated database
+            os.makedirs(os.path.dirname(db_path), exist_ok=True)
+            with open(db_path, 'w') as f:
+                json.dump(db, f, indent=2)
+                
+            # Now vectorize the transcript for this client
+            memory = TherapyTranscriptMemory(client_name)
+            success = memory.create_memory_index(force_reload=True)
+            
+            if success:
+                logger.info(f"Successfully added and vectorized transcript for client {client_name}")
+                return True
+            else:
+                logger.error(f"Failed to vectorize transcript for client {client_name}")
+                return False
+                
+        except Exception as e:
+            logger.error(f"Error adding transcript to database and vectorizing: {e}")
+            return False
     
     def process_audio_file(self, audio_file_path: str, 
                           therapist_name: str = "Therapist", 

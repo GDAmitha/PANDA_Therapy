@@ -28,8 +28,9 @@ def transcribe_audio_to_json(
     if not os.path.isfile(audio_file_path):
         return False, f"Audio file not found: {audio_file_path}"
     
-    # Create transcriptions directory if it doesn't exist
-    output_dir = "transcriptions"
+    # Create transcriptions directory in the Audio folder if it doesn't exist
+    current_dir = os.path.dirname(os.path.abspath(__file__))  # Get Audio folder path
+    output_dir = os.path.join(current_dir, "transcriptions")
     os.makedirs(output_dir, exist_ok=True)
     
     # Generate output filename

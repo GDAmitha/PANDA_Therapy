@@ -1,148 +1,162 @@
-from fastapi import FastAPI, HTTPException, UploadFile, File, Form
+"""Main FastAPI application for PANDA Therapy
+
+This module serves as the entry point for the PANDA Therapy API, providing
+multi-user support, authentication, and integration with personalized
+Letta agents for each client.
+"""
+
+from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-from typing import List, Optional, Dict, Any
-from rag_agent import TherapyRAGAgent
-from audio_processor import AudioProcessor
-import shutil, tempfile
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from dotenv import load_dotenv
+import os
 import logging
 import traceback
-import json
-import os
+
+# Import routes
+from user_routes import router as user_router
+from chat_routes import router as chat_router
+
+# Import models and components
+# Import our simple development authentication system
+from simple_auth import get_current_user, create_dev_user
+from models.user import User
+from database import Database
+from openai_llama_rag import OpenAITherapyIndex
+
+# Load environment variables
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = FastAPI()
+# Create FastAPI application
+app = FastAPI(
+    title="PANDA Therapy API",
+    description="API for the PANDA Therapy application with multi-user support and personalized agents",
+    version="1.0.0"
+)
 
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["http://localhost:3000"],  # Frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Initialize the RAG agent and audio processor
-try:
-    agent = TherapyRAGAgent()
-    audio_processor = AudioProcessor()
-    logger.info("RAG agent and audio processor initialized successfully")
-except Exception as e:
-    logger.error(f"Failed to initialize components: {str(e)}\n{traceback.format_exc()}")
-    raise
+# Database initialization
+db = Database()
 
-class ChatRequest(BaseModel):
-    message: str
-    chat_history: Optional[List[dict]] = []
+# No OAuth2 scheme needed for simple authentication
 
-@app.post("/chat")
-async def chat(request: ChatRequest):
+# Shared therapy knowledge RAG agent
+shared_agent = None
+
+# Include routers
+app.include_router(user_router, prefix="/api")
+app.include_router(chat_router, prefix="/api")
+
+# Simple dev authentication endpoint
+@app.post("/api/dev-login")
+async def dev_login(username: str, name: str, role: str = "patient"):
+    """
+    Simple development login that creates a user if needed
+    Returns the user ID to be used in the X-User-ID header
+    """
+    user = create_dev_user(username, name, role)
+    
+    return {
+        "user_id": user.id,
+        "username": user.username,
+        "role": user.role,
+        "message": "Use this user_id in the X-User-ID header for authentication"
+    }
+
+# Root endpoint
+@app.get("/")
+async def root():
+    """
+    Root endpoint to check if the API is running
+    """
+    return {"message": "PANDA Therapy API is running"}
+
+# Health check endpoint
+@app.get("/health")
+async def health_check():
+    """
+    Health check endpoint to verify the API is functioning properly
+    """
+    return {"status": "ok", "version": "1.0.0"}
+
+# Protected endpoint example
+@app.get("/api/protected")
+async def protected_route(current_user: User = Depends(get_current_user)):
+    """
+    Example protected route that requires authentication
+    """
+    return {
+        "message": f"Hello, {current_user.name}!",
+        "user_id": current_user.id,
+        "role": current_user.role
+    }
+
+# Initialize a shared therapy knowledge index for all users
+def init_shared_agent():
+    """
+    Initialize the shared therapy knowledge index using OpenAITherapyIndex
+    """
+    global shared_agent
     try:
-        logger.info(f"Received chat request with message: {request.message}")
-        logger.info(f"Chat history: {request.chat_history}")
+        # Create the shared therapy index
+        shared_agent = OpenAITherapyIndex()
         
-        # Validate chat_history format
-        if not isinstance(request.chat_history, list):
-            logger.error("Chat history is not a list")
-            raise HTTPException(status_code=400, detail="Chat history must be a list")
-            
-        response = agent.chat(request.message, request.chat_history)
-        logger.info("Successfully generated response")
-        return {"response": response}
+        # Load shared therapy documents
+        success = shared_agent.load_documents()
+        
+        if success:
+            logger.info("Shared therapy knowledge index initialized successfully")
+        else:
+            logger.warning("Shared therapy knowledge index initialization had issues")
+        
+        return success
     except Exception as e:
-        error_detail = f"Error in chat endpoint: {str(e)}\n{traceback.format_exc()}"
-        logger.error(error_detail)
-        raise HTTPException(status_code=500, detail=error_detail)
+        logger.error(f"Failed to initialize shared therapy index: {str(e)}\n{traceback.format_exc()}")
+        return False
 
-@app.post("/load-documents")
-async def load_documents(directory: str = "therapy_documents"):
+# Server startup event to initialize components
+@app.on_event("startup")
+async def startup_event():
+    """
+    Initialize necessary components on server startup
+    """
     try:
-        logger.info(f"Loading documents from directory: {directory}")
-        agent.load_documents(directory)
-        logger.info("Documents loaded successfully")
-        return {"status": "success"}
-    except Exception as e:
-        error_detail = f"Error loading documents: {str(e)}\n{traceback.format_exc()}"
-        logger.error(error_detail)
-        raise HTTPException(status_code=500, detail=error_detail)
-
-@app.post("/upload-audio")
-async def upload_audio(file: UploadFile = File(...), therapist_name: str = Form("Therapist"), patient_name: str = Form("Patient")):
-    try:
-        logger.info(f"Processing audio file: {file.filename}")
+        # Initialize user database directory
+        user_data_dir = "./user_data"
+        os.makedirs(user_data_dir, exist_ok=True)
         
-        # 1) Save to a temporary file
-        suffix = ".wav" if file.filename.endswith(".wav") else ".mp3"
-        with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
-            shutil.copyfileobj(file.file, tmp)
-            tmp_path = tmp.name
+        # Initialize shared storage directories
+        shared_storage_dir = "./storage/shared"
+        os.makedirs(os.path.join(shared_storage_dir, "documents"), exist_ok=True)
         
-        logger.info(f"Saved audio to temporary file: {tmp_path}")
+        # Initialize shared knowledge agent
+        init_shared_agent()
         
-        # 2) Process audio file through the pipeline
-        result = audio_processor.process_audio_session(
-            tmp_path, 
-            therapist_name=therapist_name,
-            patient_name=patient_name
-        )
-        
-        if not result.get("success", False):
-            raise Exception(result.get("error", "Unknown processing error"))
-        
-        # 3) Add processed chunks to the RAG system
-        chunks = result.get("chunks", [])
-        agent.add_audio_session(chunks)
-        
-        return {
-            "status": "success", 
-            "session_id": result.get("session_id"),
-            "segments_processed": len(chunks)
-        }
-    except Exception as e:
-        error_detail = f"Audio processing failed: {str(e)}\n{traceback.format_exc()}"
-        logger.error(error_detail)
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.post("/load-audio-json")
-async def load_audio_json(file_path: str):
-    try:
-        logger.info(f"Loading audio JSON data from: {file_path}")
-        
-        # Validate the file path
-        if not os.path.exists(file_path):
-            raise ValueError(f"File does not exist: {file_path}")
-        
-        # Load into RAG system
-        agent.load_audio_data(file_path)
-        
-        return {"status": "success", "message": f"Successfully loaded audio data from {file_path}"}
-    except Exception as e:
-        error_detail = f"Failed to load audio JSON: {str(e)}\n{traceback.format_exc()}"
-        logger.error(error_detail)
-        raise HTTPException(status_code=500, detail=str(e))
-
-if __name__ == "__main__":
-    import uvicorn
-    try:
-        # Load documents on startup
-        logger.info("Loading documents on startup...")
-        agent.load_documents("therapy_documents")
-        logger.info("Initial document loading successful")
-        
-        # Check for existing audio emotion files to load
+        # Check for existing audio emotion files to potentially load
         audio_emo_dir = "backend/Audio/audio_emo_transcript"
         if os.path.exists(audio_emo_dir):
-            for filename in os.listdir(audio_emo_dir):
-                if filename.endswith(".json"):
-                    file_path = os.path.join(audio_emo_dir, filename)
-                    logger.info(f"Loading existing audio emotion file: {file_path}")
-                    agent.load_audio_data(file_path)
+            logger.info(f"Found audio emotion directory: {audio_emo_dir}")
+            # Note: We won't auto-load these files as they need to be associated with specific users
+            # Users will need to explicitly load these files through the API
+        
+        logger.info("PANDA Therapy API startup complete")
     except Exception as e:
-        logger.error(f"Failed to load initial data on startup: {str(e)}\n{traceback.format_exc()}")
-        # Continue running even if initial loading fails
-        pass
+        logger.error(f"Startup error: {str(e)}\n{traceback.format_exc()}")
+        # Continue running even if some parts of initialization fail
 
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="debug") 
+# Main entry point
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="debug")
