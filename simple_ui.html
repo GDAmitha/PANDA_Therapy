@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANDA Therapy Dev UI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .sidebar {
+            width: 300px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .main-content {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .tab-button {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        
+        .tab-button.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .chat-message {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .user-message {
+            background-color: #e7f5ff;
+            margin-left: 20px;
+        }
+        
+        .agent-message {
+            background-color: #f0f7e6;
+            margin-right: 20px;
+        }
+        
+        .chat-history {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .message-input {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .message-input textarea {
+            flex: 1;
+        }
+        
+        .transcript-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .transcript-table th, .transcript-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .transcript-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .user-info {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        /* Log panel styles */
+        .log-panel {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 600px;
+            height: 300px;
+            background: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 0;
+            padding: 10px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .log-entry {
+            margin-bottom: 5px;
+            padding: 3px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .log-entry.request {
+            background-color: #e9f5ff;
+        }
+        
+        .log-entry.response {
+            background-color: #f3fff3;
+        }
+        
+        .log-entry.error {
+            background-color: #fff0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>PANDA Therapy</h2>
+            
+            <div id="login-panel">
+                <h3>Login / Register</h3>
+                <input type="text" id="username" placeholder="Username">
+                <input type="text" id="name" placeholder="Full Name">
+                <select id="role">
+                    <option value="patient">Patient</option>
+                    <option value="therapist">Therapist</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button id="login-button">Login / Register</button>
+            </div>
+            
+            <div id="user-panel" style="display: none;">
+                <div class="user-info">
+                    <h3>User Information</h3>
+                    <p><strong>Username:</strong> <span id="user-username"></span></p>
+                    <p><strong>Role:</strong> <span id="user-role"></span></p>
+                    <p><strong>ID:</strong> <span id="user-id"></span></p>
+                    <button id="logout-button">Logout</button>
+                </div>
+                
+                <h3>Navigation</h3>
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="chat">Chat</button>
+                    <button class="tab-button" data-tab="upload">Audio Upload</button>
+                    <button class="tab-button" data-tab="simulate">Simulate Session</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div id="welcome-message">
+                <h1>Welcome to PANDA Therapy Dev UI</h1>
+                <p>Please login or register using the form on the left side.</p>
+            </div>
+            
+            <div id="content-area" style="display: none;">
+                <div id="chat-tab" class="tab-content active">
+                    <h2>Chat with Your Therapy Agent</h2>
+                    <div class="chat-history" id="chat-history">
+                        <!-- Chat messages will be added here -->
+                    </div>
+                    <div class="message-input">
+                        <textarea id="message-input" placeholder="Type your message here..."></textarea>
+                        <button id="send-button">Send</button>
+                    </div>
+                </div>
+                
+                <div id="upload-tab" class="tab-content">
+                    <h2>Upload Therapy Session Audio</h2>
+                    <input type="file" id="audio-file" accept=".mp3,.wav,.m4a">
+                    <div style="display: flex; gap: 20px;">
+                        <div style="flex: 1;">
+                            <input type="text" id="therapist-name" placeholder="Therapist Name" value="Dr. Smith">
+                        </div>
+                        <div style="flex: 1;">
+                            <input type="text" id="patient-name" placeholder="Patient Name" value="Test Patient">
+                        </div>
+                    </div>
+                    <button id="upload-button">Upload Audio</button>
+                    <div id="upload-result" style="margin-top: 20px;"></div>
+                </div>
+                
+                <div id="simulate-tab" class="tab-content">
+                    <h2>Simulate Therapy Session</h2>
+                    
+                    <h3>Add Statement to Transcript</h3>
+                    <textarea id="statement-text" placeholder="Statement text"></textarea>
+                    <div style="display: flex; gap: 20px;">
+                        <div style="flex: 1;">
+                            <select id="speaker-role">
+                                <option value="therapist">Therapist</option>
+                                <option value="patient">Patient</option>
+                            </select>
+                        </div>
+                        <div style="flex: 1;">
+                            <select id="emotion">
+                                <option value="neutral">Neutral</option>
+                                <option value="positive">Positive</option>
+                                <option value="negative">Negative</option>
+                                <option value="anxious">Anxious</option>
+                                <option value="supportive">Supportive</option>
+                                <option value="frustrated">Frustrated</option>
+                            </select>
+                        </div>
+                        <div style="flex: 1;">
+                            <input type="text" id="timestamp" placeholder="Timestamp" value="00:00:00">
+                        </div>
+                    </div>
+                    <button id="add-statement-button">Add Statement</button>
+                    
+                    <h3>Current Transcript</h3>
+                    <div id="transcript-container">
+                        <table class="transcript-table" id="transcript-table">
+                            <thead>
+                                <tr>
+                                    <th>Speaker</th>
+                                    <th>Text</th>
+                                    <th>Emotion</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Transcript rows will be added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="margin-top: 20px; display: flex; gap: 10px;">
+                        <button id="clear-transcript-button">Clear Transcript</button>
+                        <button id="submit-transcript-button">Submit Transcript</button>
+                    </div>
+                    <div id="simulation-result" style="margin-top: 20px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Debug Log Panel -->
+    <div class="log-panel" id="log-panel">
+        <h3>API Interaction Logs</h3>
+        <div id="log-entries"></div>
+    </div>
+
+    <script>
+        // API configuration
+        const API_URL = "http://localhost:8000"; // Changed back to 8000 since that's where the server is running
+        
+        // State management
+        let state = {
+            userId: null,
+            username: null,
+            role: null,
+            chatHistory: [],
+            transcript: []
+        };
+        
+        // DOM Elements
+        const loginPanel = document.getElementById('login-panel');
+        const userPanel = document.getElementById('user-panel');
+        const welcomeMessage = document.getElementById('welcome-message');
+        const contentArea = document.getElementById('content-area');
+        
+        // Login/Register functionality
+        document.getElementById('login-button').addEventListener('click', async () => {
+            const username = document.getElementById('username').value;
+            const name = document.getElementById('name').value;
+            const role = document.getElementById('role').value;
+            
+            if (!username || !name) {
+                alert('Please enter both username and name');
+                return;
+            }
+            
+            try {
+                // Log the request
+                logApiCall('request', 'POST', `/api/dev-login?username=${username}&name=${name}&role=${role}`, null);
+                
+                // Using POST method as required by the backend, but with query parameters
+                // In FastAPI, parameters defined in the function signature are expected in the query string
+                const response = await fetch(`${API_URL}/api/dev-login?username=${encodeURIComponent(username)}&name=${encodeURIComponent(name)}&role=${encodeURIComponent(role)}`, {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    // Log the response
+                    logApiCall('response', 'POST', `/api/dev-login`, data);
+                    
+                    state.userId = data.user_id;
+                    state.username = data.username;
+                    state.role = data.role;
+                    
+                    // Update UI
+                    document.getElementById('user-username').textContent = state.username;
+                    document.getElementById('user-role').textContent = state.role;
+                    document.getElementById('user-id').textContent = state.userId;
+                    
+                    loginPanel.style.display = 'none';
+                    userPanel.style.display = 'block';
+                    welcomeMessage.style.display = 'none';
+                    contentArea.style.display = 'block';
+                } else {
+                    const errorText = await response.text();
+                    // Log the error
+                    logApiCall('error', 'POST', `/api/dev-login`, errorText);
+                    alert(`Login failed: ${errorText}`);
+                }
+            } catch (error) {
+                alert(`Error: ${error.message}`);
+            }
+        });
+        
+        // Logout functionality
+        document.getElementById('logout-button').addEventListener('click', () => {
+            state = {
+                userId: null,
+                username: null,
+                role: null,
+                chatHistory: [],
+                transcript: []
+            };
+            
+            // Update UI
+            loginPanel.style.display = 'block';
+            userPanel.style.display = 'none';
+            welcomeMessage.style.display = 'block';
+            contentArea.style.display = 'none';
+            
+            // Clear chat history and transcript
+            document.getElementById('chat-history').innerHTML = '';
+            document.getElementById('transcript-table').querySelector('tbody').innerHTML = '';
+        });
+        
+        // Tab switching
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active tab button
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                button.classList.add('active');
+                
+                // Show selected tab content
+                const tabId = button.getAttribute('data-tab');
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        // Chat functionality
+        document.getElementById('send-button').addEventListener('click', async () => {
+            const messageInput = document.getElementById('message-input');
+            const message = messageInput.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message to chat
+            addChatMessage('user', message);
+            messageInput.value = '';
+            
+            try {
+                const payload = {
+                    message: message,
+                    chat_history: state.chatHistory
+                };
+                
+                // Log the request
+                logApiCall('request', 'POST', `/api/chat/message`, payload);
+                
+                const response = await fetch(`${API_URL}/api/chat/message`, {
+                    method: 'POST',
+                    headers: {
+                        'X-User-ID': state.userId,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    // Log the response
+                    logApiCall('response', 'POST', `/api/chat/message`, data);
+                    addChatMessage('agent', data.response);
+                } else {
+                    const errorText = await response.text();
+                    // Log the error
+                    logApiCall('error', 'POST', `/api/chat/message`, errorText);
+                    alert(`Error sending message: ${errorText}`);
+                }
+            } catch (error) {
+                // Log the error
+                logApiCall('error', 'POST', `/api/chat/message`, error.message);
+                alert(`Error: ${error.message}`);
+            }
+        });
+        
+        function addChatMessage(role, content) {
+            const chatHistory = document.getElementById('chat-history');
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chat-message');
+            messageDiv.classList.add(role === 'user' ? 'user-message' : 'agent-message');
+            
+            const roleText = role === 'user' ? 'You' : 'Agent';
+            messageDiv.innerHTML = `<strong>${roleText}:</strong> ${content}`;
+            
+            chatHistory.appendChild(messageDiv);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+            
+            // Update state
+            state.chatHistory.push({
+                role: role === 'user' ? 'user' : 'assistant',
+                content: content
+            });
+        }
+        
+        // Audio upload functionality
+        document.getElementById('upload-button').addEventListener('click', async () => {
+            const audioFile = document.getElementById('audio-file').files[0];
+            const therapistName = document.getElementById('therapist-name').value;
+            const patientName = document.getElementById('patient-name').value;
+            
+            if (!audioFile) {
+                alert('Please select an audio file');
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append('file', audioFile);
+            formData.append('therapist_name', therapistName);
+            formData.append('patient_name', patientName);
+            
+            try {
+                const response = await fetch(`${API_URL}/api/audio/upload`, {
+                    method: 'POST',
+                    headers: {
+                        'X-User-ID': state.userId
+                    },
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('upload-result').innerHTML = `
+                        <div style="padding: 15px; background-color: #d4edda; border-radius: 4px;">
+                            <h4>Upload Successful!</h4>
+                            <p>Session ID: ${data.session_id}</p>
+                            <p>Segments processed: ${data.segments_processed}</p>
+                        </div>
+                    `;
+                } else {
+                    const errorText = await response.text();
+                    document.getElementById('upload-result').innerHTML = `
+                        <div style="padding: 15px; background-color: #f8d7da; border-radius: 4px;">
+                            <h4>Upload Failed</h4>
+                            <p>${errorText}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                document.getElementById('upload-result').innerHTML = `
+                    <div style="padding: 15px; background-color: #f8d7da; border-radius: 4px;">
+                        <h4>Error</h4>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        });
+        
+        // Transcript simulation functionality
+        document.getElementById('add-statement-button').addEventListener('click', () => {
+            const text = document.getElementById('statement-text').value.trim();
+            const speaker = document.getElementById('speaker-role').value;
+            const emotion = document.getElementById('emotion').value;
+            const timestamp = document.getElementById('timestamp').value;
+            
+            if (!text) {
+                alert('Please enter statement text');
+                return;
+            }
+            
+            // Add to state
+            state.transcript.push({
+                speaker,
+                text,
+                emotion,
+                timestamp
+            });
+            
+            // Update table
+            updateTranscriptTable();
+            
+            // Clear input
+            document.getElementById('statement-text').value = '';
+        });
+        
+        document.getElementById('clear-transcript-button').addEventListener('click', () => {
+            state.transcript = [];
+            updateTranscriptTable();
+        });
+        
+        document.getElementById('submit-transcript-button').addEventListener('click', async () => {
+            if (state.transcript.length === 0) {
+                alert('Please add at least one statement to the transcript');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_URL}/api/audio/simulate`, {
+                    method: 'POST',
+                    headers: {
+                        'X-User-ID': state.userId,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        session_id: generateUUID(),
+                        therapist: 'Dr. Smith',
+                        patient: 'Test Patient',
+                        transcript: state.transcript
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('simulation-result').innerHTML = `
+                        <div style="padding: 15px; background-color: #d4edda; border-radius: 4px;">
+                            <h4>Simulation Successful!</h4>
+                            <p>Session ID: ${data.session_id}</p>
+                            <p>Transcript statements: ${data.transcript_count}</p>
+                        </div>
+                    `;
+                    
+                    // Clear transcript after successful submission
+                    state.transcript = [];
+                    updateTranscriptTable();
+                } else {
+                    const errorText = await response.text();
+                    document.getElementById('simulation-result').innerHTML = `
+                        <div style="padding: 15px; background-color: #f8d7da; border-radius: 4px;">
+                            <h4>Simulation Failed</h4>
+                            <p>${errorText}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                document.getElementById('simulation-result').innerHTML = `
+                    <div style="padding: 15px; background-color: #f8d7da; border-radius: 4px;">
+                        <h4>Error</h4>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        });
+        
+        function updateTranscriptTable() {
+            const tableBody = document.getElementById('transcript-table').querySelector('tbody');
+            tableBody.innerHTML = '';
+            
+            state.transcript.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.speaker}</td>
+                    <td>${item.text}</td>
+                    <td>${item.emotion}</td>
+                    <td>${item.timestamp}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+        
+        // Helper function to generate UUID
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+        
+        // Log API calls for debugging
+        function logApiCall(type, method, endpoint, data) {
+            const logPanel = document.getElementById('log-entries');
+            const logEntry = document.createElement('div');
+            logEntry.classList.add('log-entry', type);
+            
+            const timestamp = new Date().toISOString().split('T')[1].slice(0, 8);
+            let logText = `[${timestamp}] ${method} ${endpoint}`;
+            
+            if (data) {
+                // Format the data nicely
+                if (typeof data === 'string') {
+                    logText += `\n${data}`;
+                } else {
+                    logText += `\n${JSON.stringify(data, null, 2)}`;
+                }
+            }
+            
+            logEntry.innerText = logText;
+            logPanel.appendChild(logEntry);
+            
+            // Auto-scroll to bottom
+            const panel = document.getElementById('log-panel');
+            panel.scrollTop = panel.scrollHeight;
+        }
+    </script>
+</body>
+</html>

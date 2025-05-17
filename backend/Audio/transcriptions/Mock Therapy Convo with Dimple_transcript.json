@@ -1,0 +1,89 @@
+{
+  "text": "Hi, Dimple. Welcome in today. What brings you in? What brings me in is over the weekend I jumped into a lake. I don't know how to swim and I don't know why I was delusional enough to jump into a lake. I don't know what's wrong with me or is anything even wrong with me. Well, seems like a fun thing to do on a weekend. What prompted you to jump into the lake? I don't know. I think I was like. I felt done with life. Oh. Was it more of self harm? I don't really know. I think it was a mixture of like adrenaline. Well, I'm glad you're able to laugh about it. Was it more of a sperva moment? Kind of like, I'm done with life. How do you get out? How did I get out? There was a lifeguard who saved me from drowning. So you were going to drown and. Then I guess I wasn't necessarily going to drown. I thought that I was like, oh, I'm done. I just like, want some water, like, you know, try something new. I guess I didn't quite realize that I didn't know how to swim until I was in that situation. And then I realized that, oh, I really. I could have really died from that situation. I guess the important thing now is are you going to do that again or do you think this is a pattern? I don't know. I feel like it is a pattern that I tend to do things and not really realize the consequences of them until they happen. Is this more of an impulsivity or more of a just deep desire to die? Well, that's all I have time for today. Hopefully this LLM agent will help you not do that again. Goodbye. Please tell me.",
+  "utterances": [
+    {
+      "speaker": "B",
+      "text": "Hi, Dimple. Welcome in today. What brings you in?",
+      "start": 1280,
+      "end": 4960
+    },
+    {
+      "speaker": "A",
+      "text": "What brings me in is over the weekend I jumped into a lake. I don't know how to swim and I don't know why I was delusional enough to jump into a lake. I don't know what's wrong with me or is anything even wrong with me.",
+      "start": 5200,
+      "end": 15680
+    },
+    {
+      "speaker": "B",
+      "text": "Well, seems like a fun thing to do on a weekend. What prompted you to jump into the lake?",
+      "start": 18080,
+      "end": 23600
+    },
+    {
+      "speaker": "A",
+      "text": "I don't know. I think I was like. I felt done with life.",
+      "start": 24320,
+      "end": 26560
+    },
+    {
+      "speaker": "B",
+      "text": "Oh. Was it more of self harm?",
+      "start": 27290,
+      "end": 30650
+    },
+    {
+      "speaker": "A",
+      "text": "I don't really know. I think it was a mixture of like adrenaline.",
+      "start": 31930,
+      "end": 34650
+    },
+    {
+      "speaker": "B",
+      "text": "Well, I'm glad you're able to laugh about it. Was it more of a sperva moment? Kind of like, I'm done with life. How do you get out?",
+      "start": 39130,
+      "end": 49050
+    },
+    {
+      "speaker": "A",
+      "text": "How did I get out? There was a lifeguard who saved me from drowning.",
+      "start": 49690,
+      "end": 53290
+    },
+    {
+      "speaker": "B",
+      "text": "So you were going to drown and.",
+      "start": 53690,
+      "end": 56080
+    },
+    {
+      "speaker": "A",
+      "text": "Then I guess I wasn't necessarily going to drown. I thought that I was like, oh, I'm done. I just like, want some water, like, you know, try something new. I guess I didn't quite realize that I didn't know how to swim until I was in that situation. And then I realized that, oh, I really. I could have really died from that situation.",
+      "start": 56080,
+      "end": 73400
+    },
+    {
+      "speaker": "B",
+      "text": "I guess the important thing now is are you going to do that again or do you think this is a pattern?",
+      "start": 73640,
+      "end": 78520
+    },
+    {
+      "speaker": "A",
+      "text": "I don't know. I feel like it is a pattern that I tend to do things and not really realize the consequences of them until they happen.",
+      "start": 79480,
+      "end": 86740
+    },
+    {
+      "speaker": "B",
+      "text": "Is this more of an impulsivity or more of a just deep desire to die? Well, that's all I have time for today. Hopefully this LLM agent will help you not do that again. Goodbye.",
+      "start": 87540,
+      "end": 104260
+    },
+    {
+      "speaker": "A",
+      "text": "Please tell me.",
+      "start": 106020,
+      "end": 106650
+    }
+  ]
+}
