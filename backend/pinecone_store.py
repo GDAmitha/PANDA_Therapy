@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Import Pinecone through our wrapper
-import pinecone_wrapper as pc
+import backend.pinecone_wrapper as pc
 
 # Load environment variables
 
@@ -64,24 +64,18 @@ class PineconeManager:
             Name of the index
         """
         # Check if index exists
-        existing_indexes = pc.list_indexes().names()
+        existing_indexes = pc.list_indexes()
         
         if THERAPY_INDEX_NAME not in existing_indexes:
             logger.info(f"Creating new Pinecone index: {THERAPY_INDEX_NAME}")
             
-            # Create index with new API
+            # Create index with pinecone-client API
             try:
-                from pinecone import ServerlessSpec
-                
-                # Create index with serverless spec
+                # Create index
                 pc.create_index(
                     name=THERAPY_INDEX_NAME,
                     dimension=dimension,
-                    metric="cosine",
-                    spec=ServerlessSpec(
-                        cloud="aws",
-                        region="us-west-2"
-                    )
+                    metric="cosine"
                 )
                 
                 # Wait for index to be ready
@@ -92,7 +86,7 @@ class PineconeManager:
                 while not ready and retry_count < max_retries:
                     try:
                         # Check if the index appears in the list
-                        if THERAPY_INDEX_NAME in pc.list_indexes().names():
+                        if THERAPY_INDEX_NAME in pc.list_indexes():
                             ready = True
                             logger.info(f"Index {THERAPY_INDEX_NAME} is ready")
                         else:
@@ -126,24 +120,18 @@ class PineconeManager:
         index_name = f"{TRANSCRIPT_INDEX_PREFIX}{safe_user_id}"
         
         # Check if index exists
-        existing_indexes = pc.list_indexes().names()
+        existing_indexes = pc.list_indexes()
         
         if index_name not in existing_indexes:
             logger.info(f"Creating new Pinecone index for user {user_id}: {index_name}")
             
-            # Create index with new API
+            # Create index with pinecone-client API
             try:
-                from pinecone import ServerlessSpec
-                
-                # Create index with serverless spec
+                # Create index
                 pc.create_index(
                     name=index_name,
                     dimension=dimension,
-                    metric="cosine",
-                    spec=ServerlessSpec(
-                        cloud="aws",
-                        region="us-west-2"
-                    )
+                    metric="cosine"
                 )
                 
                 # Wait for index to be ready
@@ -154,7 +142,7 @@ class PineconeManager:
                 while not ready and retry_count < max_retries:
                     try:
                         # Check if the index appears in the list
-                        if index_name in pc.list_indexes().names():
+                        if index_name in pc.list_indexes():
                             ready = True
                             logger.info(f"Index {index_name} is ready")
                         else:

@@ -236,7 +236,7 @@ def get_therapy_index():
 def get_transcript_memory(user_id: str):
     """Get the appropriate transcript memory based on available components"""
     if full_rag_available:
-        from transcript_memory import TherapyTranscriptMemory
+        from backend.transcript_memory import TherapyTranscriptMemory
         return TherapyTranscriptMemory(user_id)
     else:
         return SimpleFallbackTranscriptMemory(user_id)

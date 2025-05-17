@@ -5,12 +5,15 @@ This module provides basic user identification without complex JWT/Auth0 systems
 """
 
 from typing import Optional, Dict
+import os
+import logging
 from fastapi import Header, HTTPException, status
-from models.user import User
-from database import Database
+from backend.models.user import User
+from backend.database import Database
 
 # Database instance
 db = Database()
+logger = logging.getLogger(__name__)
 
 async def get_current_user(x_user_id: Optional[str] = Header(None)) -> User:
     """
@@ -26,6 +29,16 @@ async def get_current_user(x_user_id: Optional[str] = Header(None)) -> User:
         The User object
     """
     if not x_user_id:
+        # Try to use default user if header is missing
+        default_user_id = os.environ.get("DEFAULT_USER_ID")
+        if default_user_id:
+            # Get the default user
+            user = db.get_user(default_user_id)
+            if user:
+                logger.info(f"Using default user: {user.username} ({default_user_id})")
+                return user
+        
+        # Only raise error if no default user is available
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Authentication required. Please provide X-User-ID header.",

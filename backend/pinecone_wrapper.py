@@ -27,74 +27,160 @@ logger.info("PINECONE_API_KEY set directly in code")
 pc = None
 
 try:
-    # Import the new Pinecone class API
-    from pinecone import Pinecone, ServerlessSpec
-    
-    # Create a wrapper class for compatibility with the rest of the codebase
-    class PineconeWrapper:
-        """Wrapper class for Pinecone to provide backward compatibility"""
+    # Try newer Pinecone package first (direct Pinecone class)
+    try:
+        from pinecone import Pinecone, ServerlessSpec
         
-        def __init__(self, api_key):
-            """Initialize with Pinecone client"""
-            self.pc = Pinecone(api_key=api_key)
+        # Create a wrapper class for compatibility with the rest of the codebase
+        class PineconeWrapper:
+            """Wrapper class for newer Pinecone client (v2+)"""
             
-        def is_ready(self) -> bool:
-            """Check if Pinecone is ready"""
-            return self.pc is not None
+            def __init__(self, api_key):
+                """Initialize with Pinecone client"""
+                self.pc = Pinecone(api_key=api_key)
+                
+            def is_ready(self) -> bool:
+                """Check if Pinecone is ready"""
+                return self.pc is not None
+                
+            def list_indexes(self):
+                """List available indexes"""
+                return self.pc.list_indexes().names()
             
-        def list_indexes(self):
-            """List available indexes"""
-            return self.pc.list_indexes()
+            def create_index(self, name: str, dimension: int, metric: str = "cosine", **kwargs) -> bool:
+                """Create a new index"""
+                try:
+                    # Create with serverless spec by default
+                    spec = kwargs.get('spec', ServerlessSpec(cloud="aws", region="us-west-2"))
+                    self.pc.create_index(
+                        name=name,
+                        dimension=dimension,
+                        metric=metric,
+                        spec=spec
+                    )
+                    time.sleep(1)
+                    return True
+                except Exception as e:
+                    logger.error(f"Error creating index: {e}")
+                    return False
+                    
+            def delete_index(self, name: str) -> bool:
+                """Delete an index"""
+                try:
+                    self.pc.delete_index(name)
+                    return True
+                except Exception as e:
+                    logger.error(f"Error deleting index: {e}")
+                    return False
+                    
+            def describe_index(self, name: str) -> Dict[str, Any]:
+                """Get details about an index"""
+                try:
+                    # New API doesn't have describe_index, so simulate it
+                    index_list = self.pc.list_indexes().names()
+                    if name in index_list:
+                        return {"status": {"ready": True}}
+                    return {}
+                except Exception as e:
+                    logger.error(f"Error describing index: {e}")
+                    return {}
+                    
+            def get_index(self, name: str):
+                """Get a Pinecone index"""
+                try:
+                    return self.pc.Index(name)
+                except Exception as e:
+                    logger.error(f"Error getting index: {e}")
+                    return None
         
-        def create_index(self, name: str, dimension: int, metric: str = "cosine", **kwargs) -> bool:
-            """Create a new index"""
-            try:
-                spec = kwargs.get('spec', ServerlessSpec(cloud="aws", region="us-west-2"))
-                self.pc.create_index(
-                    name=name,
-                    dimension=dimension,
-                    metric=metric,
-                    spec=spec
-                )
-                # Wait briefly to ensure index is in list
-                time.sleep(1)
-                return True
-            except Exception as e:
-                logger.error(f"Error creating index: {e}")
-                return False
+        # Initialize with newer Pinecone client
+        pc = PineconeWrapper(PINECONE_API_KEY)
+        logger.info("Pinecone initialized successfully with new Pinecone API")
+        
+    except (ImportError, AttributeError) as e:
+        # Fall back to older pinecone-client (v1.x)
+        import pinecone
+        
+        # Create a wrapper class for compatibility with the rest of the codebase
+        class LegacyPineconeWrapper:
+            """Wrapper class for older pinecone-client package"""
+            
+            def __init__(self, api_key):
+                """Initialize with legacy Pinecone client"""
+                # Check for different initialization methods
+                if hasattr(pinecone, 'init'):
+                    # Old style init
+                    pinecone.init(api_key=api_key)
+                    self.pc = pinecone
+                else:
+                    # Try direct Pinecone constructor if available
+                    self.pc = pinecone.Pinecone(api_key=api_key)
                 
-        def delete_index(self, name: str) -> bool:
-            """Delete an index"""
-            try:
-                self.pc.delete_index(name)
-                return True
-            except Exception as e:
-                logger.error(f"Error deleting index: {e}")
-                return False
+            def is_ready(self) -> bool:
+                """Check if Pinecone is ready"""
+                return self.pc is not None
                 
-        def describe_index(self, name: str) -> Dict[str, Any]:
-            """Get details about an index"""
-            try:
-                # The new API doesn't have describe_index, so we create a compatible response
-                index_list = self.pc.list_indexes().names()
-                if name in index_list:
-                    return {"status": {"ready": True}}
-                return {}
-            except Exception as e:
-                logger.error(f"Error describing index: {e}")
-                return {}
-                
-        def get_index(self, name: str):
-            """Get a Pinecone index"""
-            try:
-                return self.pc.Index(name)
-            except Exception as e:
-                logger.error(f"Error getting index: {e}")
-                return None
-    
-    # Initialize the wrapper
-    pc = PineconeWrapper(PINECONE_API_KEY)
-    logger.info("Pinecone initialized successfully with new API")
+            def list_indexes(self):
+                """List available indexes"""
+                if hasattr(self.pc, 'list_indexes'):
+                    return self.pc.list_indexes()
+                return []
+            
+            def create_index(self, name: str, dimension: int, metric: str = "cosine", **kwargs) -> bool:
+                """Create a new index"""
+                try:
+                    if hasattr(self.pc, 'create_index'):
+                        self.pc.create_index(
+                            name=name,
+                            dimension=dimension,
+                            metric=metric
+                        )
+                    else:
+                        logger.error("create_index method not found")
+                        return False
+                    time.sleep(1)
+                    return True
+                except Exception as e:
+                    logger.error(f"Error creating index: {e}")
+                    return False
+                    
+            def delete_index(self, name: str) -> bool:
+                """Delete an index"""
+                try:
+                    if hasattr(self.pc, 'delete_index'):
+                        self.pc.delete_index(name)
+                    else:
+                        logger.error("delete_index method not found")
+                        return False
+                    return True
+                except Exception as e:
+                    logger.error(f"Error deleting index: {e}")
+                    return False
+                    
+            def describe_index(self, name: str) -> Dict[str, Any]:
+                """Get details about an index"""
+                try:
+                    if hasattr(self.pc, 'describe_index'):
+                        return self.pc.describe_index(name)
+                    return {}
+                except Exception as e:
+                    logger.error(f"Error describing index: {e}")
+                    return {}
+                    
+            def get_index(self, name: str):
+                """Get a Pinecone index"""
+                try:
+                    if hasattr(self.pc, 'Index'):
+                        return self.pc.Index(name)
+                    logger.error("Index method not found")
+                    return None
+                except Exception as e:
+                    logger.error(f"Error getting index: {e}")
+                    return None
+        
+        # Initialize with legacy pinecone-client
+        pc = LegacyPineconeWrapper(PINECONE_API_KEY)
+        logger.info("Pinecone initialized successfully with legacy pinecone-client")
     
 except Exception as e:
     logger.error(f"Error initializing Pinecone: {e}")
@@ -105,15 +191,15 @@ def list_indexes() -> List[str]:
     """List all available Pinecone indexes"""
     if pc:
         try:
-            return pc.list_indexes().names()
+            return pc.list_indexes()
         except Exception as e:
             logger.error(f"Error listing indexes: {e}")
     return []
 
-def create_index(name: str, dimension: int, metric: str = "cosine") -> bool:
+def create_index(name: str, dimension: int, metric: str = "cosine", **kwargs) -> bool:
     """Create a Pinecone index"""
     if pc:
-        return pc.create_index(name, dimension, metric)
+        return pc.create_index(name, dimension, metric, **kwargs)
     return False
 
 def delete_index(name: str) -> bool:

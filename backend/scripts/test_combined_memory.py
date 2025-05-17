@@ -25,7 +25,7 @@ load_dotenv()
 
 def test_transcript_memory():
     """Test accessing Natey's transcript memory"""
-    from transcript_memory import TherapyTranscriptMemory
+    from backend.transcript_memory import TherapyTranscriptMemory
     
     client_name = "natey"
     logger.info(f"Testing transcript memory for client: {client_name}")

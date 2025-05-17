@@ -25,7 +25,7 @@ sys.path.append(str(parent_dir))
 
 # Import transcript memory system
 try:
-    from transcript_memory import TherapyTranscriptMemory
+    from backend.transcript_memory import TherapyTranscriptMemory
 except ImportError as e:
     logger.error(f"Error importing transcript_memory: {e}")
     sys.exit(1)

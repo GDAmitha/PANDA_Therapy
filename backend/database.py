@@ -11,7 +11,7 @@ import logging
 from typing import Dict, List, Optional, Any, Type, TypeVar
 from datetime import datetime
 import bcrypt
-from models.user import User, Patient, Therapist, UserRole
+from backend.models.user import User, Patient, Therapist, UserRole
 
 logger = logging.getLogger(__name__)
 

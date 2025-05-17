@@ -17,8 +17,8 @@ from dotenv import load_dotenv
 
 # Try to import optional dependencies
 try:
-    from models.user import User
-    from database import Database
+    from backend.models.user import User
+    from backend.database import Database
     has_database = True
 except ImportError:
     # For the simplified API, create a compatible User class

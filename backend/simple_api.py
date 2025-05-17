@@ -75,7 +75,7 @@ if letta_available:
         logger.error(f"Failed to initialize Letta agent manager: {str(e)}")
         
 # Set up to use our compatibility layer
-from rag_compatibility import full_rag_available
+from backend.rag_compatibility import full_rag_available
 
 # Import the memory connector with fallback mode
 from combined_memory_connector import CombinedMemoryConnector, rag_available
@@ -507,8 +507,7 @@ except Exception as e:
 async def upload_audio(
     file: UploadFile = File(...),
     therapist_name: str = Form("Therapist"),
-    patient_name: str = Form("Patient"),
-    current_user: User = Depends(get_current_user)
+    patient_name: str = Form("Patient")
 ):
     """
     Process uploaded audio file, perform emotion analysis, and store in database
@@ -547,7 +546,7 @@ async def upload_audio(
                     with open(output_path, 'r') as f:
                         transcript_data = json.load(f)
                     
-                    # Store the session in the database
+                    # Store the session in the database (no user-specific logic)
                     session_data = {
                         "session_id": session_id,
                         "therapist": therapist_name,
@@ -555,65 +554,17 @@ async def upload_audio(
                         "created_at": datetime.now().isoformat(),
                         "audio_path": output_path,
                     }
-                    
-                    db_session_id = db.create_therapy_session(current_user.id, session_data)
+                    db_session_id = db.create_therapy_session("public", session_data)
                     
                     # Store the transcript in the database
                     transcript_data["session_id"] = db_session_id
-                    transcript_id = db.create_transcript(current_user.id, transcript_data)
-                    
-                    # Analyze the therapy session with the user's Letta agent
-                    analysis_result = therapy_analyzer.analyze_transcript_data(
-                        current_user.id, 
-                        transcript_data
-                    )
-                    
-                    # Store the analysis in the database
-                    if "analysis_summary" in analysis_result:
-                        analysis_data = {
-                            "session_id": db_session_id,
-                            "transcript_id": transcript_id,
-                            "summary": analysis_result["analysis_summary"],
-                            "created_at": datetime.now().isoformat(),
-                        }
-                        analysis_id = db.create_session_analysis(current_user.id, analysis_data)
-                    
-                    # Also add to the RAG system if available
-                    if rag_available and rag_agent:
-                        try:
-                            # Format for RAG indexing
-                            rag_document = format_transcript_for_rag(transcript_data["transcript"], session_id)
-                            
-                            # Create document object for RAG indexing
-                            from llama_index import Document
-                            doc = Document(
-                                text=rag_document,
-                                metadata={
-                                    "source": "audio_transcript",
-                                    "session_id": session_id,
-                                    "user_id": current_user.id
-                                }
-                            )
-                            
-                            # Make sure the user has an index
-                            rag_agent.create_user_index_if_not_exists(current_user.id)
-                            
-                            # Add document to the user's index
-                            rag_agent.add_user_documents(
-                                user_id=current_user.id, 
-                                documents=[doc]
-                            )
-                            logger.info(f"Added processed audio transcript to RAG index for user {current_user.id}")
-                        except Exception as e:
-                            logger.error(f"Failed to add transcript to RAG index: {str(e)}")
+                    transcript_id = db.create_transcript("public", transcript_data)
                     
                     return {
                         "status": "success",
                         "message": "Audio file processed with emotion analysis",
                         "session_id": session_id,
                         "transcript_id": transcript_id,
-                        "analysis_id": analysis_id if "analysis_summary" in analysis_result else None,
-                        "analysis_summary": analysis_result.get("analysis_summary", None),
                         "transcript_count": len(transcript_data["transcript"])
                     }
                     
@@ -639,8 +590,7 @@ async def upload_audio(
                 "created_at": datetime.now().isoformat(),
                 "simulated": True,
             }
-            
-            db_session_id = db.create_therapy_session(current_user.id, session_data)
+            db_session_id = db.create_therapy_session("public", session_data)
             
             # Store the simulated transcript in the database
             transcript_data = {
@@ -649,50 +599,7 @@ async def upload_audio(
                 "emotion_analysis": extract_emotions(simulated_transcript),
                 "simulated": True,
             }
-            
-            transcript_id = db.create_transcript(current_user.id, transcript_data)
-            
-            # Also keep in memory cache for quick access during this session
-            if current_user.id not in user_audio:
-                user_audio[current_user.id] = []
-            
-            audio_data = AudioData(
-                transcript=simulated_transcript,
-                session_id=session_id,
-                therapist=therapist_name,
-                patient=patient_name
-            )
-            
-            user_audio[current_user.id].append(audio_data.dict())
-            
-            # Also add to the RAG system if available
-            if rag_available and rag_agent:
-                try:
-                    # Format for RAG indexing
-                    rag_document = format_transcript_for_rag(simulated_transcript, session_id)
-                    
-                    # Create document object for RAG indexing
-                    from llama_index import Document
-                    doc = Document(
-                        text=rag_document,
-                        metadata={
-                            "source": "simulated_audio_transcript",
-                            "session_id": session_id,
-                            "user_id": current_user.id
-                        }
-                    )
-                    
-                    # Make sure the user has an index
-                    rag_agent.create_user_index_if_not_exists(current_user.id)
-                    
-                    # Add document to the user's index
-                    rag_agent.add_user_documents(
-                        user_id=current_user.id, 
-                        documents=[doc]
-                    )
-                    logger.info(f"Added simulated transcript to RAG index for user {current_user.id}")
-                except Exception as e:
-                    logger.error(f"Failed to add transcript to RAG index: {str(e)}")
+            transcript_id = db.create_transcript("public", transcript_data)
             
             return {
                 "status": "success",
@@ -701,11 +608,8 @@ async def upload_audio(
                 "transcript_id": transcript_id,
                 "transcript": simulated_transcript
             }
-            
         finally:
-            # Clean up the temporary file
             os.unlink(temp_file.name)
-    
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Import the compatibility layer for RAG components
-from rag_compatibility import get_therapy_index, get_transcript_memory, full_rag_available
+from backend.rag_compatibility import get_therapy_index, get_transcript_memory, full_rag_available
 
 # Set RAG availability flag
 rag_available = True  # Always true since we have fallbacks

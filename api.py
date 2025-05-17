@@ -1,7 +1,7 @@
 # api.py
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from rag_agent import TherapyRAGAgent
+from backend.rag_agent import TherapyRAGAgent
 import uvicorn
 
 app = FastAPI()

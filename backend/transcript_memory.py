@@ -14,7 +14,7 @@ from typing import List, Dict, Any, Optional, Tuple, Union
 import re
 
 # Import Pinecone manager
-from pinecone_store import pinecone_manager
+from backend.pinecone_store import pinecone_manager
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

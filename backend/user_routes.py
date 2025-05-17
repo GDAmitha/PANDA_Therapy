@@ -6,10 +6,10 @@ from fastapi.security import OAuth2PasswordRequestForm
 from typing import List, Optional
 from datetime import timedelta
 
-from models.user import User, Patient, Therapist, UserCreate, UserUpdate, TokenResponse, UserRole
-from database import Database
-from simple_auth import get_current_user, create_dev_user
-from letta_agent import LettaAgentManager
+from backend.models.user import User, Patient, Therapist, UserCreate, UserUpdate, TokenResponse, UserRole
+from backend.database import Database
+from backend.simple_auth import get_current_user, create_dev_user
+from backend.letta_agent import LettaAgentManager
 
 # Initialize router, database and agent manager
 router = APIRouter(tags=["users"])

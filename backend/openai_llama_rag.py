@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Optional, List, Dict, Any
 
 # Import Pinecone manager
-from pinecone_store import pinecone_manager
+from backend.pinecone_store import pinecone_manager
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -23,6 +23,9 @@ logger = logging.getLogger(__name__)
 BASE_PATH = Path(__file__).parent.parent.absolute()
 DOCS_PATH = os.path.join(BASE_PATH, "therapy_documents")
 INDEX_PERSIST_DIR = os.path.join(BASE_PATH, "backend", "openai_llama_index_storage")
+
+# Remove this import as ServiceContext is deprecated
+# from llama_index.core import ServiceContext
 
 class OpenAITherapyIndex:
     """
@@ -106,7 +109,8 @@ class OpenAITherapyIndex:
                     return True
                 except Exception as e:
                     logger.error(f"Error loading existing index: {e}")
-                    logger.info("Will create a new index")
+                    # Optionally: delete the index dir if it's corrupt
+                    return False
             
             # Create a new index
             
@@ -144,9 +148,9 @@ class OpenAITherapyIndex:
             
             logger.info(f"Loaded {len(documents)} documents in {time.time() - start_time:.2f} seconds")
             
-            # Create LlamaIndex service context for OpenAI
-            embed_model = OpenAIEmbedding()
-            service_context = ServiceContext.from_defaults(embed_model=embed_model)
+            # No need for ServiceContext - we're using Settings now
+            # This line should be removed
+            # service_context = ServiceContext.from_defaults(embed_model=embed_model)
             
             # Get or create Pinecone index for therapy knowledge
             try:
@@ -170,10 +174,9 @@ class OpenAITherapyIndex:
                 # Create vector store with Pinecone
                 vector_store = PineconeVectorStore(pinecone_index=pinecone_index)
                 
-                # Create vector index with Pinecone as storage
+                # Create vector index with Pinecone as storage - no service_context needed
                 self.index = VectorStoreIndex.from_documents(
                     documents,
-                    service_context=service_context,
                     vector_store=vector_store,
                     show_progress=True
                 )
@@ -181,8 +184,8 @@ class OpenAITherapyIndex:
                 logger.info(f"Successfully stored vectors in Pinecone index: {self.pinecone_index_name}")
             except Exception as e:
                 logger.error(f"Error using Pinecone, falling back to in-memory storage: {e}")
-                # Fallback to in-memory storage
-                self.index = VectorStoreIndex(documents, service_context=service_context)
+                # Fallback to in-memory storage - no service_context needed
+                self.index = VectorStoreIndex.from_documents(documents)
                 
             # Create directory for backup if needed
             os.makedirs(INDEX_PERSIST_DIR, exist_ok=True)
@@ -193,7 +196,7 @@ class OpenAITherapyIndex:
             
             # Create faster retriever with optimized settings
             retriever = VectorIndexRetriever(
-                index=documents_to_index,
+                index=self.index,  # Fix: Previously referred to a non-existent variable documents_to_index
                 similarity_top_k=3  # Limit results for faster retrieval
             )
             

@@ -9,12 +9,12 @@ import tempfile
 import shutil
 import json
 
-from models.user import User, Patient, Therapist, UserRole
-from simple_auth import get_current_user
-from combined_memory_connector import CombinedMemoryConnector
-from transcript_memory import TherapyTranscriptMemory
-from letta_agent import LettaAgentManager
-from audio_processor import AudioProcessor
+from backend.models.user import User, Patient, Therapist, UserRole
+from backend.simple_auth import get_current_user
+from backend.combined_memory_connector import CombinedMemoryConnector
+from backend.transcript_memory import TherapyTranscriptMemory
+from backend.letta_agent import LettaAgentManager
+from backend.audio_processor import AudioProcessor
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

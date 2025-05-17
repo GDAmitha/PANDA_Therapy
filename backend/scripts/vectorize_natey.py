@@ -36,7 +36,7 @@ def vectorize_natey_transcript():
     """Vectorize Natey's transcript using OpenAI embeddings"""
     try:
         # Import here after setting up OpenAI embeddings
-        from transcript_memory import TherapyTranscriptMemory
+        from backend.transcript_memory import TherapyTranscriptMemory
         
         # Set up OpenAI embeddings first
         setup_openai_embeddings()

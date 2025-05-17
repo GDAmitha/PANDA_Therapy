@@ -69,7 +69,7 @@ class AudioProcessor:
             Success status
         """
         try:
-            from transcript_memory import TherapyTranscriptMemory
+            from backend.transcript_memory import TherapyTranscriptMemory
             import json
             import os
             

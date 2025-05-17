@@ -14,15 +14,16 @@ import logging
 import traceback
 
 # Import routes
-from user_routes import router as user_router
-from chat_routes import router as chat_router
+from backend.user_routes import router as user_router
+from backend.chat_routes import router as chat_router
+from backend.audio_routes import router as audio_router
 
 # Import models and components
 # Import our simple development authentication system
-from simple_auth import get_current_user, create_dev_user
-from models.user import User
-from database import Database
-from openai_llama_rag import OpenAITherapyIndex
+from backend.simple_auth import get_current_user, create_dev_user
+from backend.models.user import User
+from backend.database import Database
+from backend.openai_llama_rag import OpenAITherapyIndex
 
 # Load environment variables
 load_dotenv()
@@ -55,9 +56,13 @@ db = Database()
 # Shared therapy knowledge RAG agent
 shared_agent = None
 
+# Add this global variable
+DEFAULT_USER_ID = None
+
 # Include routers
 app.include_router(user_router, prefix="/api")
 app.include_router(chat_router, prefix="/api")
+app.include_router(audio_router, prefix="/api")
 
 # Simple dev authentication endpoint
 @app.post("/api/dev-login")
@@ -74,6 +79,18 @@ async def dev_login(username: str, name: str, role: str = "patient"):
         "role": user.role,
         "message": "Use this user_id in the X-User-ID header for authentication"
     }
+
+# Add endpoint to get the default user ID
+@app.get("/api/default-user")
+async def get_default_user():
+    """Get the default user ID for use in the frontend"""
+    if DEFAULT_USER_ID:
+        return {"user_id": DEFAULT_USER_ID}
+    else:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No default user available"
+        )
 
 # Root endpoint
 @app.get("/")
@@ -126,6 +143,37 @@ def init_shared_agent():
         logger.error(f"Failed to initialize shared therapy index: {str(e)}\n{traceback.format_exc()}")
         return False
 
+# Add this function to create a default user
+def create_default_user():
+    global DEFAULT_USER_ID
+    try:
+        # Create a default user
+        default_user = create_dev_user(
+            username="default",
+            name="Default User",
+            role="patient"
+        )
+        DEFAULT_USER_ID = default_user.id
+        
+        # Store in environment variable for easy access
+        os.environ["DEFAULT_USER_ID"] = DEFAULT_USER_ID
+        
+        logger.info(f"Created default user with ID: {DEFAULT_USER_ID}")
+        
+        # Optional: Create a Letta agent for this user if needed
+        # This is commented out since letta_manager isn't imported in this file
+        # If you need Letta integration, uncomment and import letta_manager
+        # try:
+        #     from backend.letta_agent import LettaAgentManager
+        #     letta_manager = LettaAgentManager()
+        #     agent_id = letta_manager.create_agent_for_user(default_user)
+        #     if agent_id:
+        #         logger.info(f"Created Letta agent {agent_id} for default user")
+        # except Exception as e:
+        #     logger.warning(f"Could not create Letta agent for default user: {e}")
+    except Exception as e:
+        logger.error(f"Failed to create default user: {e}")
+
 # Server startup event to initialize components
 @app.on_event("startup")
 async def startup_event():
@@ -148,6 +196,9 @@ async def startup_event():
         audio_emo_dir = "backend/Audio/audio_emo_transcript"
         if os.path.exists(audio_emo_dir):
             logger.info(f"Found audio emotion directory at {audio_emo_dir}")
+        
+        # Create default user
+        create_default_user()
     except Exception as e:
         logger.error(f"Error during startup: {str(e)}\n{traceback.format_exc()}")
         raise
