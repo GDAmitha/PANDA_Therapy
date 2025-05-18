@@ -57,3 +57,13 @@ yarn-error.log*
 
 # ChromaDB
 chroma_db/ 
+
+# Storage files
+storage/
+backend/openai_llama_index_storage/
+backend/processed_audio/
+*.json
+*.pack
+*.pack.gz
+*.dylib
+*.sostorage/
